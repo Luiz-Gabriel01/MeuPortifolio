@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio - Luiz Gabriel | Desenvolvedor Web Full Stack</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-papNMh2rF9R8DXX5ml2hIHKIykOeEO7qzHpuk0V4STjaJ1aN1JHOXllhMXLyb1iUqqciY+Mqa1Fybp6iNf+xKg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      background: url('galaxy.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header,
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #8a2be2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #d0d0ff;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #8a2be2;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      margin: 0 10px;
+      background: linear-gradient(90deg, #8a2be2, #4b0082);
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 0 10px #8a2be2;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 4rem 0 2rem;
+      font-size: 2rem;
+      text-shadow: 0 0 10px #8a2be2;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      padding: 0 1rem 3rem;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .skill-icon {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .about-img {
+      width: 180px;
+      border-radius: 50%;
+      border: 3px solid #8a2be2;
+    }
+
+    .about-text {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .social-links {
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin-right: 20px;
+      color: #8a2be2;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+    }
+
+    .social-links i {
+      margin-right: 8px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        display: block;
+        margin: 10px auto;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        border-top: 1px solid #444;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav.active .nav-links {
+        display: flex;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Luiz<span>Gabriel</span></a>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+        <div class="nav-links">
+          <a href="#habilidades">Habilidades</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#projetos">Projetos</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Olá, eu sou Luiz Gabriel</h1>
+      <p>Desenvolvedor Web Full Stack com foco em tecnologias como JavaScript, PHP, React, Node.js, Python, HTML e CSS.
+      </p>
+      <a href="#sobre" class="btn">Saiba Mais</a>
+    </div>
+  </section>
+
+  <section id="projetos" class="container">
+    <h2 class="section-title">Projetos Recentes</h2>
+    <p style="text-align: center; color: #ccc;">Em breve aqui estarão meus projetos mais recentes.</p>
+  </section>
+
+  <section id="habilidades">
+    <div class="container">
+      <h2 class="section-title">Minhas Habilidades</h2>
+      <div class="skills-container">
+        <div class="skill-card"><img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            class="skill-icon">
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+            class="skill-icon">
+          <h3>PHP</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            class="skill-icon">
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            class="skill-icon">
+          <h3>React</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            class="skill-icon">
+          <h3>Node.js</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            class="skill-icon">
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            class="skill-icon">
+          <h3>CSS3</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre Mim</h2>
+      <div class="about-content">
+        <img src="perfil_luiz.png" alt="Foto de Luiz Gabriel" class="about-img">
+        <div class="about-text">
+          <p>Sou um desenvolvedor Web Full Stack com experiência em JavaScript, PHP, Python, React e Node.js.</p>
+          <p>Minha stack principal inclui HTML5, CSS3, React para frontend, e PHP, Node.js e Python para backend.</p>
+          <p>Também atuo com automações e análise de dados, e estou sempre buscando novos desafios.</p>
+          <p><strong>Idiomas:</strong> Português (Fluente), Inglês (Básico)</p>
+
+          <div class="social-links">
+            <p><strong>Me acompanhe:</strong></p>
+            <a href="https://github.com/Luiz-Gabriel01" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/luiz-gabriel-450245303/" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 - Luiz Gabriel. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector("nav");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
