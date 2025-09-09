@@ -2,329 +2,317 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio - Luiz Gabriel | Desenvolvedor Web Full Stack</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
-      background: url('galaxy.jpg') no-repeat center center fixed;
-      background-size: cover;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header,
-    footer {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 1rem 0;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .logo span {
-      color: #8a2be2;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links a {
-      color: #d0d0ff;
-      font-weight: 500;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 6rem 1rem 4rem;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #8a2be2;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      margin: 0 10px;
-      background: linear-gradient(90deg, #8a2be2, #4b0082);
-      border: none;
-      border-radius: 30px;
-      color: #fff;
-      font-weight: bold;
-      box-shadow: 0 0 10px #8a2be2;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .section-title {
-      text-align: center;
-      margin: 4rem 0 2rem;
-      font-size: 2rem;
-      text-shadow: 0 0 10px #8a2be2;
-    }
-
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 1rem;
-      padding: 0 1rem 3rem;
-    }
-
-    .skill-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      backdrop-filter: blur(10px);
-    }
-
-    .skill-icon {
-      width: 40px;
-      margin-bottom: 10px;
-    }
-
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem 0;
-    }
-
-    .about-img {
-      width: 180px;
-      border-radius: 50%;
-      border: 3px solid #8a2be2;
-    }
-
-    .about-text {
-      max-width: 600px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      border-radius: 10px;
-    }
-
-    .social-links {
-      margin-top: 1.5rem;
-    }
-
-    .social-links a {
-      display: inline-block;
-      margin-right: 20px;
-      color: #8a2be2;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #ffffff;
-    }
-
-    .social-links i {
-      margin-right: 8px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .btn {
-        display: block;
-        margin: 10px auto;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
-        border-top: 1px solid #444;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      nav.active .nav-links {
-        display: flex;
-      }
-
-      .about-content {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luiz Gabriel — Desenvolvedor Web Full Stack</title>
+  <meta name="description"
+    content="Portfólio de Luiz Gabriel, desenvolvedor web full stack. Projetos, habilidades, contato e links sociais." />
+  <meta property="og:title" content="Luiz Gabriel — Desenvolvedor Web Full Stack" />
+  <meta property="og:description" content="Projetos, habilidades, contato e links sociais." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="perfil_luiz.png" />
+  <meta name="theme-color" content="#8a2be2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/J6MdGx3GkMEb2J6bW1Z3S2Z6Bq9H3w4k1bvb7KQkq8AjtK2VHgMHqYFQHq8NQ4S0b+Xr3f3Xg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👨‍💻</text></svg>">
+    <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luiz Gabriel",
+    "jobTitle": "Desenvolvedor Web Full Stack",
+    "url": "https://seu-dominio.exemplo",
+    "sameAs": [
+      "https://github.com/Luiz-Gabriel01",
+      "https://www.linkedin.com/in/luiz-gabriel-450245303/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
   <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">Luiz<span>Gabriel</span></a>
-        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-        <div class="nav-links">
-          <a href="#habilidades">Habilidades</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#projetos">Projetos</a>
-        </div>
+    <div class="container nav" role="navigation" aria-label="principal">
+      <a class="brand" href="#">
+        <span class="logo">
+              <img src="59118.png" alt="Logo Luiz Gabriel" style="width:28px; height:28px; object-fit:contain;">
+        </span>
+        <b>Luiz<span>Gabriel</span></b>
+      </a>
+
+      <nav class="links" id="navLinks">
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Olá, eu sou Luiz Gabriel</h1>
-      <p>Desenvolvedor Web Full Stack com foco em tecnologias como JavaScript, PHP, React, Node.js, Python, HTML e CSS.
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero container reveal">
+      <span class="badge"><i class="fa-solid fa-circle-check"></i> Disponível para freelance</span>
+      <h1 class="gradient" style="margin-top:.6rem">Olá, eu sou o Luiz Gabriel.<br> Desenvolvedor Web Full Stack.</h1>
+      <p class="sub" style="margin: .9rem 0 1rem">Trabalho com <b>JavaScript</b>, <b>PHP</b>, <b>React</b>,
+        <b>Node.js</b> e <b>Python</b>. Curto criar interfaces rápidas, acessíveis e animadas, além de APIs limpas e
+        seguras.
       </p>
-      <a href="#sobre" class="btn">Saiba Mais</a>
-    </div>
-  </section>
+      <div class="cta">
+        <a class="btn primary" href="#projetos"><i class="fa-solid fa-rocket"></i> Ver projetos</a>
+        <a class="btn" href="https://github.com/Luiz-Gabriel01" target="_blank" rel="noopener"><i
+            class="fa-brands fa-github"></i> GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/luiz-gabriel-450245303/" target="_blank" rel="noopener"><i
+            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
 
-  <section id="projetos" class="container">
-    <h2 class="section-title">Projetos Recentes</h2>
-    <p style="text-align: center; color: #ccc;">Em breve aqui estarão meus projetos mais recentes.</p>
-  </section>
+    <!-- PROJETOS -->
+    <section id="projetos" class="container reveal">
+      <h2 class="section-title"><span class="dot"></span> Projetos em destaque</h2>
+      <p class="muted" style="margin-bottom:1rem">Algumas coisas recentes que desenvolvi. Filtre por stack:</p>
 
-  <section id="habilidades">
-    <div class="container">
-      <h2 class="section-title">Minhas Habilidades</h2>
-      <div class="skills-container">
-        <div class="skill-card"><img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            class="skill-icon">
-          <h3>JavaScript</h3>
+      <div class="row" style="margin-bottom:1rem">
+        <button class="btn" data-filter="all">Todos</button>
+        <button class="btn" data-filter="react">React</button>
+        <button class="btn" data-filter="php">PHP</button>
+        <button class="btn" data-filter="node">Node</button>
+        <button class="btn" data-filter="python">Python</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <!-- Card 1 -->
+        <article class="card" data-stack="react node">
+          <img class="thumb"
+            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop"
+            alt="Prévia do dashboard de analytics" loading="lazy" />
+          <div class="card-body">
+            <h3>Dashboard Analytics</h3>
+            <p class="muted">SPA em React + API Node.js com autenticação JWT, charts e dark mode.</p>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">JWT</span>
+            </div>
+            <div class="row">
+              <a class="btn" href="#" aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
+                Código</a>
+              <!-- <a class="btn" href="#" aria-label="Abrir projeto ao vivo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card" data-stack="php">
+          <img class="thumb"
+            src="https://images.unsplash.com/photo-1527430253228-e93688616381?q=80&w=1600&auto=format&fit=crop"
+            alt="Tela de sistema de ocorrências" loading="lazy" />
+          <div class="card-body">
+            <h3>Bairro Alerta</h3>
+            <p class="muted">Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo.</p>
+            <div class="tags">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Leaflet</span>
+            </div>
+            <div class="row">
+              <a class="btn" href="https://github.com/Luiz-Gabriel01/bairro_alerta"><i class="fa-brands fa-github"></i>
+                Código</a>
+              <!-- <a class="btn" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card" data-stack="python">
+          <img class="thumb"
+            src="https://images.unsplash.com/photo-1534759846116-57968a6b9f97?q=80&w=1600&auto=format&fit=crop"
+            alt="Gráficos e automação de dados" loading="lazy" />
+          <div class="card-body">
+            <h3>Automação de Dados</h3>
+            <p class="muted">Pipelines Python para ETL, geração de relatórios e agendamento com cron.</p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">ETL</span>
+            </div>
+            <div class="row">
+              <a class="btn" href="#"><i class="fa-brands fa-github"></i> Código</a>
+              <!-- <a class="btn" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="container reveal">
+      <h2 class="section-title"><span class="dot"></span> Habilidades</h2>
+      <div class="skills">
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>JavaScript </h4><span class="muted">Intermediário+</span>
+          </div>
+          <div class="meter" aria-hidden="true"><span style="width:88%"></span></div>
         </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-            class="skill-icon">
-          <h3>PHP</h3>
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>React (Hooks, Router)</h4><span class="muted">Intermediário+</span>
+          </div>
+          <div class="meter"><span style="width:84%"></span></div>
         </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-            class="skill-icon">
-          <h3>Python</h3>
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>Node.js (Express)</h4><span class="muted">Intermediário+</span>
+          </div>
+          <div class="meter"><span style="width:78%"></span></div>
         </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-            class="skill-icon">
-          <h3>React</h3>
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>PHP (PDO, MVC)</h4><span class="muted">Intermediário</span>
+          </div>
+          <div class="meter"><span style="width:72%"></span></div>
         </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-            class="skill-icon">
-          <h3>Node.js</h3>
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>Python(Auto/back)</h4><span class="muted">Intermediário</span>
+          </div>
+          <div class="meter"><span style="width:72%"></span></div>
         </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-            class="skill-icon">
-          <h3>HTML5</h3>
-        </div>
-        <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-            class="skill-icon">
-          <h3>CSS3</h3>
+        <div class="skill">
+          <div class="row" style="justify-content:space-between">
+            <h4>HTML / CSS (A11y)</h4><span class="muted">Avançado</span>
+          </div>
+          <div class="meter"><span style="width:90%"></span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="sobre">
-    <div class="container">
-      <h2 class="section-title">Sobre Mim</h2>
-      <div class="about-content">
-        <img src="perfil_luiz.png" alt="Foto de Luiz Gabriel" class="about-img">
-        <div class="about-text">
-          <p>Sou um desenvolvedor Web Full Stack com experiência em JavaScript, PHP, Python, React e Node.js.</p>
-          <p>Minha stack principal inclui HTML5, CSS3, React para frontend, e PHP, Node.js e Python para backend.</p>
-          <p>Também atuo com automações e análise de dados, e estou sempre buscando novos desafios.</p>
-          <p><strong>Idiomas:</strong> Português (Fluente), Inglês (Básico)</p>
-
-          <div class="social-links">
-            <p><strong>Me acompanhe:</strong></p>
-            <a href="https://github.com/Luiz-Gabriel01" target="_blank">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/luiz-gabriel-450245303/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
+    <!-- SOBRE -->
+    <section id="sobre" class="container reveal">
+      <h2 class="section-title"><span class="dot"></span> Sobre mim</h2>
+      <div class="about"
+        style="background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:1rem">
+        <img class="avatar" src="perfil_luiz.png" alt="Foto de perfil de Luiz Gabriel" />
+        <div>
+          <p class="muted">Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos digitais bonitos e
+            performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.</p>
+          <div class="timeline" aria-label="linha do tempo">
+            <div class="t-item">
+              <div class="t-dot"></div>
+              <b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).
+            </div>
+            <div class="t-item">
+              <div class="t-dot"></div>
+              <b>2024</b> — Dashboards React + Node para analytics em tempo real.
+            </div>
+            <div class="t-item">
+              <div class="t-dot"></div>
+              <b>2023</b> — Automação de relatórios (Python) e integrações.
+            </div>
+          </div>
+          <div class="row" style="margin-top:.8rem">
+            <a class="btn" href="mailto:luiz.gabriel12br@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail</a>
+            <a class="btn" href="https://wa.me/5581987951962" target="_blank" rel="noopener"><i
+                class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a class="btn" href="#" download><i class="fa-solid fa-file-arrow-down"></i> Baixar CV</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container">
+      <h2>Vamos conversar</h2>
+      <p>Curtiu algo? Manda uma mensagem — respondo rápido.</p>
+      <form id="contactForm">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.8rem">
+          <input aria-label="Seu nome" name="nome" placeholder="Seu nome" required>
+          <input aria-label="Seu e-mail" name="email" type="email" placeholder="Seu e-mail" required>
+        </div>
+        <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+        <!-- Honeypot -->
+        <input type="text" name="website" style="display:none">
+        <div class="row">
+          <button type="submit">Enviar</button>
+          <span id="statusMsg"></span>
+        </div>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 - Luiz Gabriel. Todos os direitos reservados.</p>
-    </div>
+    <div class="container">© <span id="year"></span> — Luiz Gabriel. Todos os direitos reservados.</div>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.querySelector("nav");
-      nav.classList.toggle("active");
-    }
+    // Utilidades
+    const $ = (s, el = document) => el.querySelector(s);
+    const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+    // Ano no rodapé
+    $('#year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = $('#menuBtn');
+    const navLinks = $('#navLinks');
+    menuBtn?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Theme toggle
+    const themeBtn = $('#themeBtn');
+    themeBtn?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light');
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: .08 });
+    $$('.reveal').forEach(el => io.observe(el));
+
+    // Filter projects
+    const grid = $('#projectGrid');
+    $$('#projetos .btn[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.filter;
+        $$('#projetos .btn[data-filter]').forEach(b => b.classList.remove('primary'));
+        btn.classList.add('primary');
+        [...grid.children].forEach(card => {
+          card.style.display = key === 'all' || card.dataset.stack.includes(key) ? '' : 'none';
+        });
+      });
+    });
+
+    const form = document.getElementById('contactForm');
+    const statusMsg = document.getElementById('statusMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (form.website.value) return; // honeypot anti-bot
+      statusMsg.textContent = 'Enviando...';
+
+      const formData = new FormData(form);
+
+      try {
+        const resp = await fetch("https://backend12br.infinityfreeapp.com", {
+          method: "POST",
+          body: formData
+        });
+        const data = await resp.json();
+        if (data.success) {
+          statusMsg.textContent = data.message;
+          form.reset();
+        } else {
+          statusMsg.textContent = data.message || "Erro ao enviar.";
+        }
+      } catch (err) {
+        console.error(err);
+        statusMsg.textContent = "Erro de conexão.";
+      }
+    });
   </script>
 </body>
 
