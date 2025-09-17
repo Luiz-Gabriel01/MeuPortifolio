@@ -18,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $subject = "Novo contato do portfólio: $nome";
         $body = "Nome: $nome\nE-mail: $email\n\nMensagem:\n$mensagem";
 
-        // Cabeçalhos: use email do próprio domínio para evitar bloqueio no InfinityFree
-        $headers = "From: luiz.gabriel12br@gmail.com\r\n"; // substitua pelo email do seu domínio
-        $headers .= "Reply-To: $email\r\n";
+        $headers = "From: contato@backend12br.infinityfreeapp.com\r\n";
+        $headers .= "Reply-To: luiz.gabriel12br@gmail.com\r\n"; // seu Gmail para respostas
+
 
         // Envia o e-mail
         if (mail($to, $subject, $body, $headers)) {
