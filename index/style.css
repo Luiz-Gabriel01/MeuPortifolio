@@ -215,10 +215,27 @@
       padding: .8rem 1rem;
       border-radius: 14px;
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, .14);
-      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, 0.911);
+      background: linear-gradient(180deg, rgba(247, 245, 245, 0.06), rgba(255, 255, 255, .02));
       font-weight: 600
+      color: var(--text) !important;
     }
+
+        button.btn {
+          all: unset;
+          /* remove o estilo padrão do <button> */
+          display: inline-flex;
+          align-items: center;
+          gap: .55rem;
+          padding: .8rem 1rem;
+          border-radius: 14px;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.911);
+          background: linear-gradient(180deg, rgba(247, 245, 245, 0.06), rgba(255, 255, 255, .02));
+          font-weight: 600;
+          color: var(--text);
+          /* garante branco */
+        }
 
     .btn.primary {
       background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -446,7 +463,7 @@
     }
 
         /* Header limpo e responsivo */
-        .container-header {
+        /* .container-header {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -498,7 +515,7 @@
         }
     
         /* Mobile button */
-        #menuBtn {
+        /* #menuBtn {
           display: none;
           background: none;
           border: none;
@@ -508,7 +525,7 @@
         }
     
         /* Mobile nav */
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
           #menuBtn {
             display: block;
           }
@@ -528,4 +545,4 @@
           .links.open {
             display: flex;
           }
-        }
+        }  */ */
