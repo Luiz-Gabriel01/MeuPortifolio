@@ -20,7 +20,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👨‍💻</text></svg>">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +43,7 @@
     <div class="container nav" role="navigation" aria-label="principal">
       <a class="brand" href="#">
         <span class="logo">
-              <img src="59118.png" alt="Logo Luiz Gabriel" style="width:28px; height:28px; object-fit:contain;">
+          <img src="59118.png" alt="Logo Luiz Gabriel" style="width:28px; height:28px; object-fit:contain;">
         </span>
         <b>Luiz<span>Gabriel</span></b>
       </a>
@@ -52,7 +52,6 @@
         <a href="#projetos">Projetos</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#sobre">Sobre</a>
-        <!-- <a href="#contato">Contato</a> -->
       </nav>
     </div>
   </header>
@@ -85,15 +84,12 @@
         <button class="btn" data-filter="react">React</button>
         <button class="btn" data-filter="php">PHP</button>
         <button class="btn" data-filter="node">Node</button>
-        <!-- <button class="btn" data-filter="python">Python</button> -->
       </div>
 
       <div class="grid" id="projectGrid">
         <!-- Card 1 -->
         <article class="card" data-stack="react node">
-          <img class="thumb"
-            src="dashBoard.png"
-            alt="Prévia do dashboard de analytics" loading="lazy" />
+          <img class="thumb" src="dashBoard.png" alt="Prévia do dashboard de analytics" loading="lazy" />
           <div class="card-body">
             <h3>Dashboard Analytics</h3>
             <p class="muted">SPA em React + API Node.js com autenticação JWT, charts e dark mode.</p>
@@ -101,17 +97,15 @@
               <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">JWT</span>
             </div>
             <div class="row">
-              <a class="btn" href="https://github.com/Luiz-Gabriel01/DashboardAnalytics#" aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
+              <a class="btn" href="https://github.com/Luiz-Gabriel01/DashboardAnalytics#"
+                aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
                 Código</a>
-              <!-- <a class="btn" href="#" aria-label="Abrir projeto ao vivo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
             </div>
           </div>
         </article>
         <!-- Card 2 -->
         <article class="card" data-stack="php">
-          <img class="thumb"
-            src="bairroAlerta.png"
-            alt="Tela de sistema de ocorrências" loading="lazy" />
+          <img class="thumb" src="bairroAlerta.png" alt="Tela de sistema de ocorrências" loading="lazy" />
           <div class="card-body">
             <h3>Bairro Alerta</h3>
             <p class="muted">Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo.</p>
@@ -121,15 +115,12 @@
             <div class="row">
               <a class="btn" href="https://github.com/Luiz-Gabriel01/bairro_alerta"><i class="fa-brands fa-github"></i>
                 Código</a>
-              <!-- <a class="btn" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
             </div>
           </div>
         </article>
         <!-- Card 3 -->
         <article class="card" data-stack="python">
-          <img class="thumb"
-            src=""
-            alt="  " loading="lazy" />
+          <img class="thumb" src="" alt="  " loading="lazy" />
           <div class="card-body">
             <h3>Em breve...</h3>
             <p class="muted">...</p>
@@ -138,7 +129,6 @@
             </div>
             <div class="row">
               <a class="btn" href="#"><i class="fa-brands fa-github"></i> Código</a>
-              <!-- <a class="btn" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a> -->
             </div>
           </div>
         </article>
@@ -206,13 +196,10 @@
               <div class="t-dot"></div>
               <b>2025</b> — Dashboards React + Node para analytics em tempo real.
             </div>
-            <!-- <div class="t-item">
-              <div class="t-dot"></div>
-              <b>2025</b> — Automação de relatórios (Python) e integrações.
-            </div>
-          </div> -->
+          </div>
           <div class="row" style="margin-top:.8rem">
-            <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=luiz.gabriel12br@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail</a>
+            <!-- Botão de e-mail ajustado -->
+            <a class="btn" id="emailBtn"><i class="fa-solid fa-envelope"></i> E-mail</a>
             <a class="btn" href="https://wa.me/5581987951962" target="_blank" rel="noopener"><i
                 class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             <a class="btn" href="SIM (1).pdf" download><i class="fa-solid fa-file-arrow-down"></i> Baixar CV</a>
@@ -220,25 +207,6 @@
         </div>
       </div>
     </section>
-
-    <!-- CONTATO -->
-    <!-- <section id="contato" class="container">
-      <h2>Vamos conversar</h2>
-      <p>Curtiu algo? Manda uma mensagem — respondo rápido.</p>
-      <form id="contactForm">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.8rem">
-          <input aria-label="Seu nome" name="nome" placeholder="Seu nome" required>
-          <input aria-label="Seu e-mail" name="email" type="email" placeholder="Seu e-mail" required>
-        </div>
-        <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
-        <!-- Honeypot -->
-        <!-- <input type="text" name="website" style="display:none">
-        <div class="row">
-          <button type="submit">Enviar</button>
-          <span id="statusMsg"></span>
-        </div>
-      </form>
-    </section> -->
   </main>
 
   <footer>
@@ -286,10 +254,10 @@
       });
     });
 
+    // Form contato (desativado por enquanto)
     const form = document.getElementById('contactForm');
     const statusMsg = document.getElementById('statusMsg');
-
-    form.addEventListener('submit', async (e) => {
+    form?.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (form.website.value) return; // honeypot anti-bot
       statusMsg.textContent = 'Enviando...';
@@ -311,6 +279,17 @@
       } catch (err) {
         console.error(err);
         statusMsg.textContent = "Erro de conexão.";
+      }
+    });
+
+    // ✅ Botão de e-mail inteligente (celular → mailto, PC → Gmail Web)
+    document.getElementById("emailBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = "mailto:luiz.gabriel12br@gmail.com";
+      } else {
+        window.open("https://mail.google.com/mail/?view=cm&fs=1&to=luiz.gabriel12br@gmail.com", "_blank");
       }
     });
   </script>
