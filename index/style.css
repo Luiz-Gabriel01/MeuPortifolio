@@ -14,8 +14,13 @@
     * {
       box-sizing: border-box
     }
+
     body {
       height: 100%
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -81,7 +86,14 @@
       gap: .7rem;
       align-items: center;
       font-weight: 800;
-      letter-spacing: .2px
+      letter-spacing: .2px;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (hover: hover) {
+      .brand:hover {
+        transform: scale(1.02);
+      }
     }
 
     .brand .logo {
@@ -91,7 +103,15 @@
       height: 38px;
       border-radius: 12px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 0 0 3px rgba(138, 43, 226, .25)
+      box-shadow: 0 0 0 3px rgba(138, 43, 226, .25);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (hover: hover) {
+      .brand:hover .logo {
+        box-shadow: 0 0 20px var(--primary), 0 0 40px rgba(138, 43, 226, .5);
+        transform: scale(1.1) rotate(5deg);
+      }
     }
 
     .brand b {
@@ -111,12 +131,33 @@
     .links a {
       padding: .5rem .8rem;
       border-radius: 10px;
-      color: var(--muted)
+      color: var(--muted);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
     }
 
-    .links a:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, .05)
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transform: translateX(-50%);
+      transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (hover: hover) {
+      .links a:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, .05);
+        transform: translateY(-2px);
+      }
+
+      .links a:hover::after {
+        width: 60%;
+      }
     }
 
     .menu {
@@ -179,7 +220,23 @@
       background: linear-gradient(90deg, var(--text), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent
+      color: transparent;
+      animation: gradientFlow 6s ease infinite;
+      background-size: 200% 200%;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% center;
+      }
+
+      50% {
+        background-position: 100% center;
+      }
+
+      100% {
+        background-position: 0% center;
+      }
     }
 
     .sub {
@@ -198,7 +255,29 @@
       font-size: .9rem;
       color: var(--muted);
       backdrop-filter: blur(6px);
-      background: rgba(255, 255, 255, .04)
+      background: rgba(255, 255, 255, .04);
+      animation: float 3s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      .badge:hover {
+        border-color: var(--primary);
+        background: rgba(138, 43, 226, .1);
+        transform: translateY(-2px);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     .cta {
@@ -217,33 +296,82 @@
       cursor: pointer;
       border: 1px solid rgba(255, 255, 255, 0.911);
       background: linear-gradient(180deg, rgba(247, 245, 245, 0.06), rgba(255, 255, 255, .02));
-      font-weight: 600
+      font-weight: 600;
       color: var(--text) !important;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-        button.btn {
-          all: unset;
-          /* remove o estilo padrão do <button> */
-          display: inline-flex;
-          align-items: center;
-          gap: .55rem;
-          padding: .8rem 1rem;
-          border-radius: 14px;
-          cursor: pointer;
-          border: 1px solid rgba(255, 255, 255, 0.911);
-          background: linear-gradient(180deg, rgba(247, 245, 245, 0.06), rgba(255, 255, 255, .02));
-          font-weight: 600;
-          color: var(--text);
-          /* garante branco */
-        }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    button.btn {
+      all: unset;
+      /* remove o estilo padrão do <button> */
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .8rem 1rem;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.911);
+      background: linear-gradient(180deg, rgba(247, 245, 245, 0.06), rgba(255, 255, 255, .02));
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button.btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    button.btn:hover::before {
+      left: 100%;
+    }
 
     .btn.primary {
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-color: transparent
+      border-color: transparent;
     }
 
-    .btn:hover {
-      transform: translateY(-1px)
+    @media (hover: hover) {
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(138, 43, 226, 0.25);
+      }
+
+      .btn.primary:hover {
+        box-shadow: 0 12px 32px rgba(138, 43, 226, 0.4);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.9rem;
+      }
     }
 
     /* Sections */
@@ -256,7 +384,21 @@
       margin: 0 0 1.2rem;
       display: flex;
       align-items: center;
-      gap: .7rem
+      gap: .7rem;
+      animation: slideInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .section-title .dot {
@@ -264,7 +406,20 @@
       height: 10px;
       border-radius: 50%;
       background: var(--primary);
-      box-shadow: 0 0 20px var(--primary)
+      box-shadow: 0 0 20px var(--primary);
+      animation: dotGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes dotGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px var(--primary);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(138, 43, 226, .8);
+      }
     }
 
     .muted {
@@ -284,11 +439,44 @@
       border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 18px;
       overflow: hidden;
-      position: relative
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .card:hover {
-      border-color: rgba(164, 117, 255, .6)
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) {
+      .card:hover {
+        border-color: rgba(164, 117, 255, .6);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card:hover .thumb {
+        transform: scale(1.08);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        grid-column: span 12 !important;
+      }
     }
 
     .thumb {
@@ -296,7 +484,8 @@
       width: 100%;
       object-fit: cover;
       display: block;
-      background: #0e0e17
+      background: #0e0e17;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .card-body {
@@ -315,7 +504,16 @@
       border: 1px solid rgba(255, 255, 255, .12);
       color: var(--muted);
       padding: .25rem .55rem;
-      border-radius: 999px
+      border-radius: 999px;
+      transition: all 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      .tag:hover {
+        background: rgba(138, 43, 226, 0.15);
+        border-color: var(--primary);
+        color: var(--text);
+      }
     }
 
     .card h3 {
@@ -352,7 +550,23 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
       border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 16px;
-      padding: 1rem
+      padding: 1rem;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (hover: hover) {
+      .skill:hover {
+        background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+        border-color: rgba(138, 43, 226, .5);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(138, 43, 226, 0.15);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
     }
 
     .skill h4 {
@@ -363,13 +577,23 @@
       height: 8px;
       background: #1a1a27;
       border-radius: 999px;
-      overflow: hidden
+      overflow: hidden;
+      position: relative;
     }
 
     .meter span {
       display: block;
       height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--accent))
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    }
+
+    @media (hover: hover) {
+      .skill:hover .meter span {
+        box-shadow: 0 0 24px rgba(138, 43, 226, 0.8);
+      }
     }
 
     /* About */
@@ -385,7 +609,15 @@
       height: 130px;
       border-radius: 50%;
       border: 3px solid var(--primary);
-      object-fit: cover
+      object-fit: cover;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (hover: hover) {
+      .about:hover .avatar {
+        transform: scale(1.08) rotate(-5deg);
+        box-shadow: 0 0 30px rgba(138, 43, 226, 0.5), 0 0 60px rgba(138, 43, 226, 0.25);
+      }
     }
 
     @media (max-width:700px) {
@@ -395,7 +627,28 @@
       }
 
       .avatar {
-        margin-inline: auto
+        margin-inline: auto;
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 2rem 0;
+      }
+
+      .hero {
+        padding: 3rem 0 2rem;
+      }
+
+      .cta {
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .row {
+        gap: 0.4rem;
       }
     }
 
@@ -407,7 +660,35 @@
     }
 
     .t-item {
-      margin-bottom: 1.2rem
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease;
+      animation: slideIn 0.6s ease forwards;
+    }
+
+    .t-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .t-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (hover: hover) {
+      .t-item:hover {
+        transform: translateX(8px);
+      }
     }
 
     .t-item .t-dot {
@@ -418,7 +699,28 @@
       position: relative;
       left: -18px;
       top: 10px;
-      box-shadow: 0 0 0 4px rgba(138, 43, 226, .25)
+      box-shadow: 0 0 0 4px rgba(138, 43, 226, .25);
+      transition: all 0.3s ease;
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    @media (hover: hover) {
+      .t-item:hover .t-dot {
+        box-shadow: 0 0 20px var(--primary), 0 0 40px rgba(138, 43, 226, .5);
+        transform: scale(1.4);
+      }
+    }
+
+    @keyframes dotPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 4px rgba(138, 43, 226, .25);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(138, 43, 226, .15);
+      }
     }
 
     /* Contact */
@@ -433,13 +735,24 @@
       border: 1px solid rgba(255, 255, 255, .12);
       color: #fff;
       border-radius: 12px;
-      padding: .8rem
+      padding: .8rem;
+      transition: all 0.3s ease;
     }
 
     input:focus,
     textarea:focus {
       outline: 2px solid var(--ring);
-      border-color: transparent
+      border-color: transparent;
+      background: rgba(138, 43, 226, 0.05);
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+    }
+
+    @media (hover: hover) {
+
+      input:focus,
+      textarea:focus {
+        transform: scale(1.01);
+      }
     }
 
     /* Footer */
@@ -454,16 +767,48 @@
     .reveal {
       opacity: 0;
       transform: translateY(8px);
-      transition: .5s ease
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .reveal.on {
       opacity: 1;
-      transform: none
+      transform: none;
     }
 
-        /* Header limpo e responsivo */
-        /* .container-header {
+    /* Stagger effect for children */
+    .reveal>* {
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .reveal.on>* {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal>*:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .reveal>*:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .reveal>*:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .reveal>*:nth-child(4) {
+      transition-delay: 0.4s;
+    }
+
+    .reveal>*:nth-child(5) {
+      transition-delay: 0.5s;
+    }
+
+    /* Header limpo e responsivo */
+    /* .container-header {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -515,7 +860,7 @@
         }
     
         /* Mobile button */
-        /* #menuBtn {
+    /* #menuBtn {
           display: none;
           background: none;
           border: none;
@@ -525,7 +870,7 @@
         }
     
         /* Mobile nav */
-        /* @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
           #menuBtn {
             display: block;
           }
@@ -545,4 +890,5 @@
           .links.open {
             display: flex;
           }
-        }  */ */
+        }  */
+    */
