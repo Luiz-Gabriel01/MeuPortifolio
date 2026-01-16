@@ -244,8 +244,8 @@
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const isTablet = /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(navigator.userAgent);
 
-      // Ajustar qualidade baseado no dispositivo
-      const particleReduction = isMobile ? 0.5 : (isTablet ? 0.7 : 1);
+      // Ajustar qualidade baseado no dispositivo (ainda mais reduzido para mobile premium)
+      const particleReduction = isMobile ? 0.3 : (isTablet ? 0.6 : 1);
 
       // Nebula particles (distant haze)
       const nebulaGeometry = new THREE.BufferGeometry();
@@ -588,28 +588,32 @@
         requestAnimationFrame(animate);
         const time = Date.now() * 0.001;
 
-        // Segment self-realignment
+        // Segment self-realignment (mais lento em mobile)
+        const segmentSpeed = reduceQuality ? 0.3 : 1;
         segments.forEach((segment, i) => {
-          const offset = Math.sin(time * segment.userData.speed + segment.userData.phase) * 0.08;
+          const offset = Math.sin(time * segment.userData.speed * segmentSpeed + segment.userData.phase) * 0.08;
           segment.rotation.z = segment.userData.baseRotation + offset;
 
-          const pulse = Math.sin(time * 2 + i * 0.5) * 0.3 + 0.7;
+          const pulseSpeed = reduceQuality ? 1 : 2;
+          const pulse = Math.sin(time * pulseSpeed + i * 0.5) * 0.3 + 0.7;
           segment.material.emissiveIntensity = pulse;
         });
 
-        // Core ring rotation
+        // Core ring rotation (mais lento em mobile)
+        const coreSpeed = reduceQuality ? 0.4 : 1;
         coreRings.forEach((ring, i) => {
-          ring.rotation.z += ring.userData.speed * (i % 2 === 0 ? 1 : -1);
+          ring.rotation.z += ring.userData.speed * coreSpeed * (i % 2 === 0 ? 1 : -1);
         });
 
-        // Data pulses movement
+        // Data pulses movement (mais lento em mobile)
+        const pulseSpeed = reduceQuality ? 0.5 : 1;
         const positions = dataPulses.geometry.attributes.position.array;
         for (let i = 0; i < pulseCount; i++) {
           const vel = pulseVelocities[i];
-          vel.angle += vel.speed;
+          vel.angle += vel.speed * pulseSpeed;
 
           positions[i * 3] = Math.cos(vel.angle) * 1.2;
-          positions[i * 3 + 1] += vel.verticalSpeed;
+          positions[i * 3 + 1] += vel.verticalSpeed * pulseSpeed;
           positions[i * 3 + 2] = Math.sin(vel.angle) * 1.2;
 
           if (Math.abs(positions[i * 3 + 1]) > 0.2) {
@@ -627,17 +631,19 @@
         distortionField.geometry.attributes.position.needsUpdate = true;
         distortionField.rotation.z += 0.0005;
 
-        // Smooth group rotation
+        // Smooth group rotation (muito mais lento em mobile)
+        const groupRotationSpeed = reduceQuality ? 0.3 : 1;
         if (autoRotate) {
-          targetRotationY = Math.sin(time * 0.2) * 0.3;
+          targetRotationY = Math.sin(time * 0.2 * groupRotationSpeed) * 0.3;
         }
         segmentGroup.rotation.x += (targetRotationX - segmentGroup.rotation.x) * 0.05;
         segmentGroup.rotation.y += (targetRotationY - segmentGroup.rotation.y) * 0.05;
-        segmentGroup.rotation.z += 0.002;
+        segmentGroup.rotation.z += 0.002 * groupRotationSpeed;
 
-        // Light animation
-        keyLight.intensity = 2.5 + Math.sin(time * 0.8) * 0.5;
-        fillLight.intensity = 1.8 + Math.cos(time * 1.2) * 0.3;
+        // Light animation (mais suave em mobile)
+        const lightIntensity = reduceQuality ? 0.5 : 1;
+        keyLight.intensity = (2.5 + Math.sin(time * 0.8) * 0.5) * lightIntensity;
+        fillLight.intensity = (1.8 + Math.cos(time * 1.2) * 0.3) * lightIntensity;
 
         renderer.render(scene, camera);
       }
