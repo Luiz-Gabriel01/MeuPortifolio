@@ -434,6 +434,30 @@
       const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const reduceQuality = isMobileDevice || window.innerWidth < 768;
 
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      const easeInOutCubic = (t) => (t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+      const interaction = {
+        mode: 'idle',
+        start: 0,
+        anticipationStart: 0,
+        pauseStart: 0,
+        separation: 0,
+        rotationSlowdown: 1,
+        glowBoost: 0
+      };
+
+      const timing = {
+        anticipation: 180,
+        decompose: 820,
+        pause: 1400,
+        reassemble: 980,
+        separationDistance: 0.4
+      };
+
       // Modular ring segments
       const segmentCount = reduceQuality ? 8 : 12;
       const segments = [];
@@ -465,6 +489,18 @@
         segmentGroup.add(segment);
       }
       scene.add(segmentGroup);
+
+      const updateRingScale = () => {
+        const width = Math.max(window.innerWidth, 1);
+        const height = Math.max(window.innerHeight, 1);
+        const aspect = width / height;
+        const widthFactor = clamp(900 / width, 1, 1.6);
+        const aspectFactor = aspect > 1.6 ? 0.92 : (aspect < 0.9 ? 1.08 : 1);
+        const scale = widthFactor * aspectFactor;
+        segmentGroup.scale.set(scale, scale, scale);
+      };
+
+      updateRingScale();
 
       // Energy core rings
       const coreRings = [];
@@ -559,6 +595,15 @@
       let targetRotationX = 0.3;
       let targetRotationY = 0;
 
+      const triggerDecomposition = () => {
+        if (interaction.mode !== 'idle') return;
+        interaction.mode = 'anticipation';
+        interaction.anticipationStart = performance.now();
+      };
+
+      container.addEventListener('click', triggerDecomposition);
+      container.addEventListener('touchstart', triggerDecomposition, { passive: true });
+
       // Mouse movement
       document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
@@ -588,15 +633,71 @@
         requestAnimationFrame(animate);
         const time = Date.now() * 0.001;
 
+        const now = performance.now();
+        if (interaction.mode === 'anticipation') {
+          const t = clamp((now - interaction.anticipationStart) / timing.anticipation, 0, 1);
+          interaction.separation = 0;
+          interaction.rotationSlowdown = 1 - t * 0.4;
+          interaction.glowBoost = t * 0.2;
+          if (t >= 1) {
+            interaction.mode = 'decompose';
+            interaction.start = now;
+          }
+        } else if (interaction.mode === 'decompose') {
+          const t = clamp((now - interaction.start) / timing.decompose, 0, 1);
+          const p = easeOutCubic(t);
+          interaction.separation = p;
+          interaction.rotationSlowdown = 1 - p * 0.6;
+          interaction.glowBoost = 0.2 + p * 0.25;
+          if (t >= 1) {
+            interaction.mode = 'pause';
+            interaction.pauseStart = now;
+          }
+        } else if (interaction.mode === 'pause') {
+          interaction.separation = 1;
+          interaction.rotationSlowdown = 0.45;
+          interaction.glowBoost = 0.45;
+          if (now - interaction.pauseStart >= timing.pause) {
+            interaction.mode = 'reassemble';
+            interaction.start = now;
+          }
+        } else if (interaction.mode === 'reassemble') {
+          const t = clamp((now - interaction.start) / timing.reassemble, 0, 1);
+          const p = easeInOutCubic(t);
+          interaction.separation = 1 - p;
+          interaction.rotationSlowdown = 0.45 + p * 0.55;
+          interaction.glowBoost = 0.45 * (1 - p);
+          if (t >= 1) {
+            interaction.mode = 'idle';
+            interaction.separation = 0;
+            interaction.rotationSlowdown = 1;
+            interaction.glowBoost = 0;
+          }
+        } else {
+          interaction.separation = 0;
+          interaction.rotationSlowdown = 1;
+          interaction.glowBoost = 0;
+        }
+
         // Segment self-realignment (mais lento em mobile)
         const segmentSpeed = reduceQuality ? 0.3 : 1;
         segments.forEach((segment, i) => {
           const offset = Math.sin(time * segment.userData.speed * segmentSpeed + segment.userData.phase) * 0.08;
-          segment.rotation.z = segment.userData.baseRotation + offset;
+          const separation = interaction.separation;
+          const radialX = Math.cos(segment.userData.baseRotation);
+          const radialY = Math.sin(segment.userData.baseRotation);
+
+          segment.position.x = radialX * timing.separationDistance * separation;
+          segment.position.y = radialY * timing.separationDistance * separation;
+          segment.position.z = Math.sin(separation * Math.PI) * 0.08 * (i % 2 === 0 ? 1 : -1);
+
+          segment.rotation.x = separation * 0.22 * (i % 2 === 0 ? 1 : -1);
+          segment.rotation.y = separation * 0.18 * (i % 3 - 1);
+          segment.rotation.z = segment.userData.baseRotation + offset + separation * 0.35 * (i % 2 === 0 ? 1 : -1);
 
           const pulseSpeed = reduceQuality ? 1 : 2;
           const pulse = Math.sin(time * pulseSpeed + i * 0.5) * 0.3 + 0.7;
-          segment.material.emissiveIntensity = pulse;
+          segment.material.emissiveIntensity = Math.min(1.4, pulse + interaction.glowBoost);
         });
 
         // Core ring rotation (mais lento em mobile)
@@ -632,7 +733,7 @@
         distortionField.rotation.z += 0.0005;
 
         // Smooth group rotation (muito mais lento em mobile)
-        const groupRotationSpeed = reduceQuality ? 0.3 : 1;
+        const groupRotationSpeed = (reduceQuality ? 0.3 : 1) * interaction.rotationSlowdown;
         if (autoRotate) {
           targetRotationY = Math.sin(time * 0.2 * groupRotationSpeed) * 0.3;
         }
@@ -662,6 +763,7 @@
         camera.aspect = newWidth / newHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(newWidth, newHeight);
+        updateRingScale();
       });
 
       // Orientation change support
@@ -677,6 +779,7 @@
           camera.aspect = newWidth / newHeight;
           camera.updateProjectionMatrix();
           renderer.setSize(newWidth, newHeight);
+          updateRingScale();
         }, 100);
       });
     })();

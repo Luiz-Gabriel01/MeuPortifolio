@@ -58,7 +58,7 @@
       right: -10%;
       width: 450px;
       height: 450px;
-      pointer-events: none;
+      pointer-events: auto;
     }
 
     #ring-canvas-container canvas {
@@ -81,20 +81,20 @@
       #ring-canvas-container {
         position: relative;
         right: auto;
-        width: 220px;
-        height: 220px;
-        margin: 1.5rem auto 0;
-        opacity: 0.8;
+        width: 320px;
+        height: 320px;
+        margin: 2rem auto 0;
+        opacity: 0.9;
       }
     }
 
     /* Small Mobile */
     @media (max-width: 480px) {
       #ring-canvas-container {
-        width: 180px;
-        height: 180px;
-        margin: 1.2rem auto 0;
-        opacity: 0.75;
+        width: 260px;
+        height: 260px;
+        margin: 1.6rem auto 0;
+        opacity: 0.88;
       }
     }
 
