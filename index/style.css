@@ -230,6 +230,7 @@
       .hero {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       .hero .badge,
@@ -237,10 +238,12 @@
       .hero .sub,
       .hero .cta {
         order: 1;
+        width: 100%;
       }
 
       .hero .cta {
         margin-bottom: 1.2rem;
+        width: 100%;
       }
 
       #ring-canvas-container {
@@ -251,6 +254,7 @@
         margin: 1.5rem auto 0;
         opacity: 0.9;
         order: 2;
+        align-self: center;
       }
     }
 
