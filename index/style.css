@@ -227,22 +227,39 @@
 
     /* Mobile */
     @media (max-width: 768px) {
+      .hero {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero .badge,
+      .hero h1,
+      .hero .sub,
+      .hero .cta {
+        order: 1;
+      }
+
+      .hero .cta {
+        margin-bottom: 1.2rem;
+      }
+
       #ring-canvas-container {
         position: relative;
         right: auto;
-        width: 320px;
-        height: 320px;
-        margin: 2rem auto 0;
+        width: 280px;
+        height: 280px;
+        margin: 1.5rem auto 0;
         opacity: 0.9;
+        order: 2;
       }
     }
 
     /* Small Mobile */
     @media (max-width: 480px) {
       #ring-canvas-container {
-        width: 260px;
-        height: 260px;
-        margin: 1.6rem auto 0;
+        width: 240px;
+        height: 240px;
+        margin: 1.2rem auto 0;
         opacity: 0.88;
       }
     }
@@ -263,6 +280,24 @@
       opacity: 1;
       transform: translateY(0);
       transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+    }
+
+    @media (max-width: 768px) {
+
+      body.loading #ring-canvas-container,
+      body.loading-exit #ring-canvas-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: clamp(200px, 40vw, 280px);
+        height: clamp(200px, 40vw, 280px);
+        transform: scale(0.7);
+        margin: 1rem auto 0;
+      }
+
+      body.loading-exit #ring-canvas-container {
+        transform: scale(1);
+      }
     }
 
     /* Mobile Landscape */
