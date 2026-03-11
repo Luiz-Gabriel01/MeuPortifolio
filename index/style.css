@@ -233,7 +233,13 @@
         align-items: flex-start;
       }
 
-      .hero .badge,
+      .hero .badge {
+        order: 1;
+        width: auto;
+        max-width: 260px;
+        align-self: flex-start;
+      }
+
       .hero h1,
       .hero .sub,
       .hero .cta {
@@ -253,6 +259,19 @@
         height: 280px;
         margin: 1.5rem auto 0;
         opacity: 0.9;
+        order: 2;
+        align-self: center;
+      }
+
+      body.loaded #ring-canvas-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        width: clamp(220px, 55vw, 280px);
+        height: clamp(220px, 55vw, 280px);
+        margin: 0.6rem auto 0;
+        transform: none;
         order: 2;
         align-self: center;
       }
