@@ -176,10 +176,10 @@
     /* 3D Ring Canvas - Hero Only */
     #ring-canvas-container {
       position: absolute;
-      top: 0;
-      right: -10%;
-      width: 450px;
-      height: 450px;
+      top: clamp(40px, 8vh, 180px);
+      right: -1%;
+      width: clamp(720px, 58vw, 1500px);
+      height: clamp(720px, 58vw, 1500px);
       pointer-events: auto;
     }
 
@@ -210,8 +210,8 @@
 
     body.loaded #ring-canvas-container {
       position: absolute;
-      top: 0;
-      right: -10%;
+      top: clamp(40px, 8vh, 180px);
+      right: -1%;
       left: auto;
       transform: none;
     }
@@ -222,6 +222,21 @@
         width: 350px;
         height: 350px;
         right: -5%;
+      }
+    }
+
+    /* Large desktop: aumentar anel para telas largas */
+    @media (min-width: 1400px) {
+      #ring-canvas-container {
+        width: clamp(1100px, 52vw, 1900px);
+        height: clamp(1100px, 52vw, 1900px);
+        right: 1%;
+        top: clamp(60px, 7vh, 220px);
+      }
+
+      body.loaded #ring-canvas-container {
+        right: 1%;
+        top: clamp(60px, 7vh, 220px);
       }
     }
 

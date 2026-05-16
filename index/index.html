@@ -114,13 +114,15 @@
           <img class="thumb" src="bairroAlerta.png" alt="Tela de sistema de ocorrências" loading="lazy" />
           <div class="card-body">
             <h3>Bairro Alerta</h3>
-            <p class="muted">Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo.</p>
+            <p class="muted">Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo. Somente para
+              desktop</p>
             <div class="tags">
               <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Leaflet</span>
             </div>
             <div class="row">
-              <a class="btn" href="https://github.com/Luiz-Gabriel01/bairro_alerta"><i class="fa-brands fa-github"></i>
-                Código</a>
+              <a class="btn" href="https://bairroalerta.infinityfree.me/bairro_alerta/index.html"><i
+                  class="fa-brands fa-github"></i>
+                Ver projeto</a>
             </div>
           </div>
         </article>
@@ -603,7 +605,9 @@
         const width = Math.max(window.innerWidth, 1);
         const height = Math.max(window.innerHeight, 1);
         const aspect = width / height;
-        const widthFactor = clamp(900 / width, 1, 1.6);
+        // Em telas maiores, aumentamos proporcionalmente o fator de largura
+        // para que o anel cresca mais em desktops amplos.
+        const widthFactor = clamp(width / 520, 1.6, 3.8);
         const aspectFactor = aspect > 1.6 ? 0.92 : (aspect < 0.9 ? 1.08 : 1);
         const scale = widthFactor * aspectFactor;
         segmentGroup.scale.set(scale, scale, scale);
