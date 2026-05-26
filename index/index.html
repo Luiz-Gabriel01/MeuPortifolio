@@ -31,7 +31,7 @@
   <!-- Cinematic Loading Screen -->
   <div id="loading-screen" class="loading-screen" role="status" aria-live="polite" aria-hidden="true">
     <div class="loading-content">
-      <p class="loading-text">Código com propósito, soluções que funcionam.</p>
+      <p class="loading-text" id="loadingText">Código com propósito, soluções que funcionam.</p>
       <div class="loading-bar-container">
         <div class="loading-bar-track">
           <div class="loading-bar-fill"></div>
@@ -51,30 +51,43 @@
         <b>Luiz<span>Gabriel</span></b>
       </a>
 
-      <nav class="links" id="navLinks">
-        <a href="#projetos">Projetos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#sobre">Sobre</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="links" id="navLinks">
+          <a href="#projetos" id="navProjectsLink">Projetos</a>
+          <a href="#habilidades" id="navSkillsLink">Habilidades</a>
+          <a href="#sobre" id="navAboutLink">Sobre</a>
+        </nav>
+
+        <button class="lang-toggle" id="langBtn" type="button" aria-label="Alternar idioma" aria-pressed="false"
+          data-lang="pt">
+          <span class="lang-option pt"><span class="flag" aria-hidden="true">🇧🇷</span><span>PT</span></span>
+          <span class="lang-separator" aria-hidden="true">/</span>
+          <span class="lang-option en"><span class="flag" aria-hidden="true">🇺🇸</span><span>EN</span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="conteudo">
     <!-- HERO -->
     <section class="hero container reveal">
-      <span class="badge"><i class="fa-solid fa-circle-check"></i> Disponível para freelance</span>
-      <h1 class="gradient" style="margin-top:.6rem">Olá, eu sou o Luiz Gabriel.<br> Desenvolvedor Web Full Stack.</h1>
-      <p class="sub" style="margin: .9rem 0 1rem">Trabalho com <b>JavaScript</b>, <b>PHP</b>, <b>React</b>,
+      <span class="badge" id="heroBadge"><i class="fa-solid fa-circle-check"></i> Disponível para freelance</span>
+      <h1 class="gradient" id="heroTitle" style="margin-top:.6rem">Olá, eu sou o Luiz Gabriel.<br> Desenvolvedor Web
+        Full Stack.</h1>
+      <p class="sub" id="heroSubtitle" style="margin: .9rem 0 1rem">Trabalho com <b>JavaScript</b>, <b>PHP</b>,
+        <b>React</b>,
         <b>Node.js</b> , <b>Python</b> e <b>AWS</b>. Curto criar interfaces rápidas, acessíveis e animadas, além de APIs
         limpas e
         seguras.
       </p>
       <div class="cta">
-        <a class="btn primary" href="#projetos"><i class="fa-solid fa-rocket"></i> Ver projetos</a>
-        <a class="btn" href="https://github.com/Luiz-Gabriel01" target="_blank" rel="noopener"><i
-            class="fa-brands fa-github"></i> GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/luiz-gabriel-450245303/" target="_blank" rel="noopener"><i
-            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a class="btn primary" id="heroProjectsBtn" href="#projetos"><i class="fa-solid fa-rocket"></i>
+          <span class="btn-text" id="heroProjectsText">Ver projetos</span></a>
+        <a class="btn" id="heroGithubBtn" href="https://github.com/Luiz-Gabriel01" target="_blank" rel="noopener"><i
+            class="fa-brands fa-github"></i> <span class="btn-text" id="heroGithubText">GitHub</span></a>
+        <a class="btn" id="heroLinkedinBtn" href="https://www.linkedin.com/in/luiz-gabriel-450245303/" target="_blank"
+          rel="noopener"><i class="fa-brands fa-linkedin"></i> <span class="btn-text"
+            id="heroLinkedinText">LinkedIn</span></a>
       </div>
       <!-- 3D Ring Canvas -->
       <div id="ring-canvas-container"></div>
@@ -82,14 +95,15 @@
 
     <!-- PROJETOS -->
     <section id="projetos" class="container reveal">
-      <h2 class="section-title"><span class="dot"></span> Projetos em destaque</h2>
-      <p class="muted" style="margin-bottom:1rem">Algumas coisas recentes que desenvolvi. Filtre por stack:</p>
+      <h2 class="section-title" id="projectsTitle"><span class="dot"></span> Projetos em destaque</h2>
+      <p class="muted" id="projectsIntro" style="margin-bottom:1rem">Algumas coisas recentes que desenvolvi. Filtre por
+        stack:</p>
 
       <div class="row" style="margin-bottom:1rem">
-        <button class="btn" data-filter="all">Todos</button>
-        <button class="btn" data-filter="react">React</button>
-        <button class="btn" data-filter="php">PHP</button>
-        <button class="btn" data-filter="node">Node</button>
+        <button class="btn" id="filterAllBtn" data-filter="all">Todos</button>
+        <button class="btn" id="filterReactBtn" data-filter="react">React</button>
+        <button class="btn" id="filterPhpBtn" data-filter="php">PHP</button>
+        <button class="btn" id="filterNodeBtn" data-filter="node">Node</button>
       </div>
 
       <div class="grid" id="projectGrid">
@@ -98,12 +112,12 @@
           <img class="thumb" src="dashBoard.png" alt="Prévia do dashboard de analytics" loading="lazy" />
           <div class="card-body">
             <h3>Dashboard Analytics</h3>
-            <p class="muted">SPA em React + API Node.js com autenticação JWT, charts e dark mode.</p>
+            <p class="muted" id="project1Desc">SPA em React + API Node.js com autenticação JWT, charts e dark mode.</p>
             <div class="tags">
               <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">JWT</span>
             </div>
             <div class="row">
-              <a class="btn" href="https://github.com/Luiz-Gabriel01/DashboardAnalytics#"
+              <a class="btn" id="project1Btn" href="https://github.com/Luiz-Gabriel01/DashboardAnalytics#"
                 aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
                 Código</a>
             </div>
@@ -114,13 +128,14 @@
           <img class="thumb" src="bairroAlerta.png" alt="Tela de sistema de ocorrências" loading="lazy" />
           <div class="card-body">
             <h3>Bairro Alerta</h3>
-            <p class="muted">Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo. Somente para
+            <p class="muted" id="project2Desc">Plataforma de relatos de segurança urbana com login, CRUD e mapa
+              interativo. Somente para
               desktop</p>
             <div class="tags">
               <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Leaflet</span>
             </div>
             <div class="row">
-              <a class="btn" href="https://bairroalerta.infinityfree.me/bairro_alerta/index.html"><i
+              <a class="btn" id="project2Btn" href="https://bairroalerta.infinityfree.me/bairro_alerta/index.html"><i
                   class="fa-brands fa-github"></i>
                 Ver projeto</a>
             </div>
@@ -128,15 +143,15 @@
         </article>
         <!-- Card 3 -->
         <article class="card" data-stack="python">
-          <img class="thumb" src="" alt="  " loading="lazy" />
+          <img class="thumb" src="" alt="Prévia em breve do próximo projeto" loading="lazy" />
           <div class="card-body">
-            <h3>Em breve...</h3>
-            <p class="muted">...</p>
+            <h3 id="project3Title">Em breve...</h3>
+            <p class="muted" id="project3Desc">...</p>
             <div class="tags">
               <span class="tag">...</span><span class="tag">...</span><span class="tag">...</span>
             </div>
             <div class="row">
-              <a class="btn" href="#"><i class="fa-brands fa-github"></i> Código</a>
+              <a class="btn" id="project3Btn" href="#"><i class="fa-brands fa-github"></i> Código</a>
             </div>
           </div>
         </article>
@@ -145,59 +160,59 @@
 
     <!-- HABILIDADES -->
     <section id="habilidades" class="container reveal">
-      <h2 class="section-title"><span class="dot"></span> Habilidades</h2>
+      <h2 class="section-title" id="skillsTitle"><span class="dot"></span> Habilidades</h2>
       <div class="skills">
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>JavaScript </h4><span class="muted">Intermediário+</span>
+            <h4>JavaScript </h4><span class="muted" id="skill1Level">Intermediário+</span>
           </div>
           <div class="meter" aria-hidden="true"><span style="width:88%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>React (Hooks, Router)</h4><span class="muted">Intermediário+</span>
+            <h4>React (Hooks, Router)</h4><span class="muted" id="skill2Level">Intermediário+</span>
           </div>
           <div class="meter"><span style="width:84%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>Node.js (Express)</h4><span class="muted">Intermediário+</span>
+            <h4>Node.js (Express)</h4><span class="muted" id="skill3Level">Intermediário+</span>
           </div>
           <div class="meter"><span style="width:78%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>AWS (EC2, S3, IAM, CloudFront)</h4><span class="muted">Intermediário+</span>
+            <h4>AWS (EC2, S3, IAM, CloudFront)</h4><span class="muted" id="skill4Level">Intermediário+</span>
           </div>
           <div class="meter"><span style="width:76%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>PHP (PDO, MVC)</h4><span class="muted">Intermediário</span>
+            <h4>PHP (PDO, MVC)</h4><span class="muted" id="skill5Level">Intermediário</span>
           </div>
           <div class="meter"><span style="width:72%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>Python(Auto/back)</h4><span class="muted">Intermediário</span>
+            <h4>Python(Auto/back)</h4><span class="muted" id="skill6Level">Intermediário</span>
           </div>
           <div class="meter"><span style="width:72%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>HTML / CSS (A11y)</h4><span class="muted">Avançado</span>
+            <h4>HTML / CSS (A11y)</h4><span class="muted" id="skill7Level">Avançado</span>
           </div>
           <div class="meter"><span style="width:90%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>Scrum</h4><span class="muted">Avançado</span>
+            <h4>Scrum</h4><span class="muted" id="skill8Level">Avançado</span>
           </div>
           <div class="meter"><span style="width:92%"></span></div>
         </div>
         <div class="skill">
           <div class="row" style="justify-content:space-between">
-            <h4>Kanban</h4><span class="muted">Avançado</span>
+            <h4>Kanban</h4><span class="muted" id="skill9Level">Avançado</span>
           </div>
           <div class="meter"><span style="width:90%"></span></div>
         </div>
@@ -206,19 +221,20 @@
 
     <!-- SOBRE -->
     <section id="sobre" class="container reveal">
-      <h2 class="section-title"><span class="dot"></span> Sobre mim</h2>
+      <h2 class="section-title" id="aboutTitle"><span class="dot"></span> Sobre mim</h2>
       <div class="about"
         style="background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:1rem">
         <img class="avatar" src="perfil_luiz.png" alt="Foto de perfil de Luiz Gabriel" />
         <div>
-          <p class="muted">Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos digitais bonitos e
+          <p class="muted" id="aboutText">Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos
+            digitais bonitos e
             performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.</p>
           <div class="timeline" aria-label="linha do tempo">
-            <div class="t-item">
+            <div class="t-item" id="timeline1">
               <div class="t-dot"></div>
               <b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).
             </div>
-            <div class="t-item">
+            <div class="t-item" id="timeline2">
               <div class="t-dot"></div>
               <b>2025</b> — Dashboards React + Node para analytics em tempo real.
             </div>
@@ -226,9 +242,9 @@
           <div class="row" style="margin-top:.8rem">
             <!-- Botão de e-mail ajustado -->
             <a class="btn" id="emailBtn"><i class="fa-solid fa-envelope"></i> E-mail</a>
-            <a class="btn" href="https://wa.me/5581987951962" target="_blank" rel="noopener"><i
+            <a class="btn" id="whatsappBtn" href="https://wa.me/5581987951962" target="_blank" rel="noopener"><i
                 class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a class="btn" href="CVLuizGabriel.pdf" download="CVLuizGabriel.pdf"><i
+            <a class="btn" id="cvBtn" href="CVLuizGabriel.pdf" download="CVLuizGabriel.pdf"><i
                 class="fa-solid fa-file-arrow-down"></i> Baixar CV</a>
           </div>
         </div>
@@ -237,7 +253,8 @@
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> — Luiz Gabriel. Todos os direitos reservados.</div>
+    <div class="container"><span id="footerText">© <span id="year"></span> — Luiz Gabriel. Todos os direitos
+        reservados.</span></div>
   </footer>
 
   <script>
@@ -261,6 +278,246 @@
     };
 
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    const translations = {
+      pt: {
+        title: 'Luiz Gabriel — Desenvolvedor Web Full Stack',
+        description: 'Portfólio de Luiz Gabriel, desenvolvedor web full stack. Projetos, habilidades, contato e links sociais.',
+        ogTitle: 'Luiz Gabriel — Desenvolvedor Web Full Stack',
+        ogDescription: 'Projetos, habilidades, contato e links sociais.',
+        loadingText: 'Código com propósito, soluções que funcionam.',
+        navProjects: 'Projetos',
+        navSkills: 'Habilidades',
+        navAbout: 'Sobre',
+        heroBadge: 'Disponível para freelance',
+        heroTitle: 'Olá, eu sou o Luiz Gabriel.<br> Desenvolvedor Web Full Stack.',
+        heroSubtitle: 'Trabalho com <b>JavaScript</b>, <b>PHP</b>, <b>React</b>, <b>Node.js</b> , <b>Python</b> e <b>AWS</b>. Curto criar interfaces rápidas, acessíveis e animadas, além de APIs limpas e seguras.',
+        heroProjects: 'Ver projetos',
+        heroGithub: 'GitHub',
+        heroLinkedin: 'LinkedIn',
+        projectsTitle: 'Projetos em destaque',
+        projectsIntro: 'Algumas coisas recentes que desenvolvi. Filtre por stack:',
+        filterAll: 'Todos',
+        filterReact: 'React',
+        filterPhp: 'PHP',
+        filterNode: 'Node',
+        project1Desc: 'SPA em React + API Node.js com autenticação JWT, charts e dark mode.',
+        project1Btn: 'Código',
+        project2Desc: 'Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo. Somente para desktop',
+        project2Btn: 'Ver projeto',
+        project3Title: 'Em breve...',
+        project3Desc: '...',
+        project3Btn: 'Código',
+        skillsTitle: 'Habilidades',
+        skillIntermediatePlus: 'Intermediário+',
+        skillIntermediate: 'Intermediário',
+        skillAdvanced: 'Avançado',
+        aboutTitle: 'Sobre mim',
+        aboutText: 'Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos digitais bonitos e performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.',
+        timeline1: '<b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).',
+        timeline2: '<b>2025</b> — Dashboards React + Node para analytics em tempo real.',
+        email: 'E-mail',
+        whatsapp: 'WhatsApp',
+        cv: 'Baixar CV',
+        footer: 'Todos os direitos reservados.'
+      },
+      en: {
+        title: 'Luiz Gabriel — Full Stack Web Developer',
+        description: 'Portfolio of Luiz Gabriel, full stack web developer. Projects, skills, contact and social links.',
+        ogTitle: 'Luiz Gabriel — Full Stack Web Developer',
+        ogDescription: 'Projects, skills, contact and social links.',
+        loadingText: 'Code with purpose, solutions that work.',
+        navProjects: 'Projects',
+        navSkills: 'Skills',
+        navAbout: 'About',
+        heroBadge: 'Available for freelance',
+        heroTitle: 'Hi, I am Luiz Gabriel.<br> Full Stack Web Developer.',
+        heroSubtitle: 'I work with <b>JavaScript</b>, <b>PHP</b>, <b>React</b>, <b>Node.js</b>, <b>Python</b> and <b>AWS</b>. I enjoy building fast, accessible and animated interfaces, plus clean and secure APIs.',
+        heroProjects: 'See projects',
+        heroGithub: 'GitHub',
+        heroLinkedin: 'LinkedIn',
+        projectsTitle: 'Featured projects',
+        projectsIntro: 'Some recent things I have built. Filter by stack:',
+        filterAll: 'All',
+        filterReact: 'React',
+        filterPhp: 'PHP',
+        filterNode: 'Node',
+        project1Desc: 'React SPA + Node.js API with JWT auth, charts and dark mode.',
+        project1Btn: 'Code',
+        project2Desc: 'Urban safety reporting platform with login, CRUD and interactive map. Desktop only',
+        project2Btn: 'View project',
+        project3Title: 'Coming soon...',
+        project3Desc: '...',
+        project3Btn: 'Code',
+        skillsTitle: 'Skills',
+        skillIntermediatePlus: 'Intermediate+',
+        skillIntermediate: 'Intermediate',
+        skillAdvanced: 'Advanced',
+        aboutTitle: 'About me',
+        aboutText: 'I am a full stack web developer. I enjoy turning ideas into beautiful and performant digital products. On the back end I build secure REST APIs; on the front end I focus on accessible UX and microinteractions.',
+        timeline1: '<b>2025</b> — Urban reporting platform (PHP + MySQL + Leaflet).',
+        timeline2: '<b>2025</b> — React + Node dashboards for real-time analytics.',
+        email: 'Email',
+        whatsapp: 'WhatsApp',
+        cv: 'Download CV',
+        footer: 'All rights reserved.'
+      }
+    };
+
+    const applyLanguage = (locale) => {
+      const language = locale === 'en' ? 'en' : 'pt';
+      const copy = translations[language];
+
+      document.documentElement.lang = language === 'en' ? 'en' : 'pt-BR';
+      document.title = copy.title;
+
+      const descriptionMeta = document.querySelector('meta[name="description"]');
+      if (descriptionMeta) descriptionMeta.setAttribute('content', copy.description);
+
+      const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+      if (ogTitleMeta) ogTitleMeta.setAttribute('content', copy.ogTitle);
+
+      const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+      if (ogDescriptionMeta) ogDescriptionMeta.setAttribute('content', copy.ogDescription);
+
+      const loadingText = $('#loadingText');
+      if (loadingText) loadingText.textContent = copy.loadingText;
+
+      const navProjectsLink = $('#navProjectsLink');
+      if (navProjectsLink) navProjectsLink.textContent = copy.navProjects;
+
+      const navSkillsLink = $('#navSkillsLink');
+      if (navSkillsLink) navSkillsLink.textContent = copy.navSkills;
+
+      const navAboutLink = $('#navAboutLink');
+      if (navAboutLink) navAboutLink.textContent = copy.navAbout;
+
+      const heroBadge = $('#heroBadge');
+      if (heroBadge) heroBadge.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${copy.heroBadge}`;
+
+      const heroTitle = $('#heroTitle');
+      if (heroTitle) heroTitle.innerHTML = copy.heroTitle;
+
+      const heroSubtitle = $('#heroSubtitle');
+      if (heroSubtitle) heroSubtitle.innerHTML = copy.heroSubtitle;
+
+      const heroProjectsBtn = $('#heroProjectsBtn');
+      const heroProjectsText = $('#heroProjectsText');
+      if (heroProjectsText) heroProjectsText.textContent = copy.heroProjects;
+
+      const heroGithubBtn = $('#heroGithubBtn');
+      const heroGithubText = $('#heroGithubText');
+      if (heroGithubText) heroGithubText.textContent = copy.heroGithub;
+
+      const heroLinkedinBtn = $('#heroLinkedinBtn');
+      const heroLinkedinText = $('#heroLinkedinText');
+      if (heroLinkedinText) heroLinkedinText.textContent = copy.heroLinkedin;
+
+      const projectsTitle = $('#projectsTitle');
+      if (projectsTitle) projectsTitle.innerHTML = `<span class="dot"></span> ${copy.projectsTitle}`;
+
+      const projectsIntro = $('#projectsIntro');
+      if (projectsIntro) projectsIntro.textContent = copy.projectsIntro;
+
+      const filterAllBtn = $('#filterAllBtn');
+      if (filterAllBtn) filterAllBtn.textContent = copy.filterAll;
+
+      const filterReactBtn = $('#filterReactBtn');
+      if (filterReactBtn) filterReactBtn.textContent = copy.filterReact;
+
+      const filterPhpBtn = $('#filterPhpBtn');
+      if (filterPhpBtn) filterPhpBtn.textContent = copy.filterPhp;
+
+      const filterNodeBtn = $('#filterNodeBtn');
+      if (filterNodeBtn) filterNodeBtn.textContent = copy.filterNode;
+
+      const project1Desc = $('#project1Desc');
+      if (project1Desc) project1Desc.textContent = copy.project1Desc;
+
+      const project1Btn = $('#project1Btn');
+      if (project1Btn) project1Btn.innerHTML = `<i class="fa-brands fa-github"></i> ${copy.project1Btn}`;
+
+      const project2Desc = $('#project2Desc');
+      if (project2Desc) project2Desc.textContent = copy.project2Desc;
+
+      const project2Btn = $('#project2Btn');
+      if (project2Btn) project2Btn.innerHTML = `<i class="fa-brands fa-github"></i> ${copy.project2Btn}`;
+
+      const project3Title = $('#project3Title');
+      if (project3Title) project3Title.textContent = copy.project3Title;
+
+      const project3Desc = $('#project3Desc');
+      if (project3Desc) project3Desc.textContent = copy.project3Desc;
+
+      const project3Btn = $('#project3Btn');
+      if (project3Btn) project3Btn.innerHTML = `<i class="fa-brands fa-github"></i> ${copy.project3Btn}`;
+
+      const skillsTitle = $('#skillsTitle');
+      if (skillsTitle) skillsTitle.innerHTML = `<span class="dot"></span> ${copy.skillsTitle}`;
+
+      const skill1Level = $('#skill1Level');
+      if (skill1Level) skill1Level.textContent = copy.skillIntermediatePlus;
+
+      const skill2Level = $('#skill2Level');
+      if (skill2Level) skill2Level.textContent = copy.skillIntermediatePlus;
+
+      const skill3Level = $('#skill3Level');
+      if (skill3Level) skill3Level.textContent = copy.skillIntermediatePlus;
+
+      const skill4Level = $('#skill4Level');
+      if (skill4Level) skill4Level.textContent = copy.skillIntermediatePlus;
+
+      const skill5Level = $('#skill5Level');
+      if (skill5Level) skill5Level.textContent = copy.skillIntermediate;
+
+      const skill6Level = $('#skill6Level');
+      if (skill6Level) skill6Level.textContent = copy.skillIntermediate;
+
+      const skill7Level = $('#skill7Level');
+      if (skill7Level) skill7Level.textContent = copy.skillAdvanced;
+
+      const skill8Level = $('#skill8Level');
+      if (skill8Level) skill8Level.textContent = copy.skillAdvanced;
+
+      const skill9Level = $('#skill9Level');
+      if (skill9Level) skill9Level.textContent = copy.skillAdvanced;
+
+      const aboutTitle = $('#aboutTitle');
+      if (aboutTitle) aboutTitle.innerHTML = `<span class="dot"></span> ${copy.aboutTitle}`;
+
+      const aboutText = $('#aboutText');
+      if (aboutText) aboutText.textContent = copy.aboutText;
+
+      const timeline1 = $('#timeline1');
+      if (timeline1) timeline1.innerHTML = `<div class="t-dot"></div> ${copy.timeline1}`;
+
+      const timeline2 = $('#timeline2');
+      if (timeline2) timeline2.innerHTML = `<div class="t-dot"></div> ${copy.timeline2}`;
+
+      const emailBtn = $('#emailBtn');
+      if (emailBtn) emailBtn.innerHTML = `<i class="fa-solid fa-envelope"></i> ${copy.email}`;
+
+      const whatsappBtn = $('#whatsappBtn');
+      if (whatsappBtn) whatsappBtn.innerHTML = `<i class="fa-brands fa-whatsapp"></i> ${copy.whatsapp}`;
+
+      const cvBtn = $('#cvBtn');
+      if (cvBtn) cvBtn.innerHTML = `<i class="fa-solid fa-file-arrow-down"></i> ${copy.cv}`;
+
+      const footerText = $('#footerText');
+      if (footerText) footerText.innerHTML = `© <span id="year"></span> — Luiz Gabriel. ${copy.footer}`;
+
+      const langBtn = $('#langBtn');
+      if (langBtn) {
+        langBtn.dataset.lang = language;
+        langBtn.setAttribute('aria-pressed', String(language === 'en'));
+        langBtn.setAttribute('aria-label', language === 'en' ? 'Switch to Portuguese' : 'Mudar para inglês');
+      }
+
+      localStorage.setItem('preferredLanguage', language);
+    };
+
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'pt';
+    applyLanguage(preferredLanguage);
 
     const startLoadingSequence = () => {
       const ringContainer = $('#ring-canvas-container');
@@ -607,8 +864,8 @@
         const aspect = width / height;
         // Em telas maiores, aumentamos proporcionalmente o fator de largura
         // para que o anel cresca mais em desktops amplos.
-        const widthFactor = clamp(width / 520, 1.6, 3.8);
-        const aspectFactor = aspect > 1.6 ? 0.92 : (aspect < 0.9 ? 1.08 : 1);
+        const widthFactor = clamp(width / 2100, 0.48, 0.82);
+        const aspectFactor = aspect > 1.6 ? 0.94 : (aspect < 0.9 ? 1.04 : 1);
         const scale = widthFactor * aspectFactor;
         segmentGroup.scale.set(scale, scale, scale);
       };
@@ -932,6 +1189,12 @@
     const themeBtn = $('#themeBtn');
     themeBtn?.addEventListener('click', () => {
       document.documentElement.classList.toggle('light');
+    });
+
+    const langBtn = $('#langBtn');
+    langBtn?.addEventListener('click', () => {
+      const nextLanguage = langBtn.dataset.lang === 'en' ? 'pt' : 'en';
+      applyLanguage(nextLanguage);
     });
 
 
