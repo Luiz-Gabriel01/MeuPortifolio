@@ -272,9 +272,9 @@
       #ring-canvas-container {
         position: relative;
         right: auto;
-        width: clamp(260px, 66vw, 320px);
-        height: clamp(260px, 66vw, 320px);
-        margin: 1.15rem auto 0;
+        width: min(100vw, 640px);
+        height: min(100vw, 640px);
+        margin: 1.45rem auto 0;
         opacity: 0.9;
         order: 2;
         align-self: center;
@@ -285,9 +285,9 @@
         top: auto;
         right: auto;
         left: auto;
-        width: clamp(260px, 66vw, 320px);
-        height: clamp(260px, 66vw, 320px);
-        margin: 0.95rem auto 0;
+        width: min(100vw, 640px);
+        height: min(100vw, 640px);
+        margin: 1.25rem auto 0;
         transform: none;
         order: 2;
         align-self: center;
@@ -297,9 +297,9 @@
     /* Small Mobile */
     @media (max-width: 480px) {
       #ring-canvas-container {
-        width: clamp(250px, 74vw, 290px);
-        height: clamp(250px, 74vw, 290px);
-        margin: 1.1rem auto 0;
+        width: min(100vw, 520px);
+        height: min(100vw, 520px);
+        margin: 1.4rem auto 0;
         opacity: 0.88;
       }
     }
