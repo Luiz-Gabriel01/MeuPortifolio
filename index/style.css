@@ -173,20 +173,116 @@
       pointer-events: none;
     }
 
-    /* 3D Ring Canvas - Hero Only */
+    /* Cosmic portal - kept in the document flow below the hero actions */
     #ring-canvas-container {
-      position: absolute;
-      top: clamp(110px, 16vh, 220px);
-      right: clamp(1rem, 3vw, 3rem);
-      width: clamp(320px, 24vw, 420px);
-      height: clamp(320px, 24vw, 420px);
+      --portal-size: clamp(540px, min(72vw, 74vh), 780px);
+      --portal-loader-scale: .42;
+      position: relative;
+      width: var(--portal-size);
+      height: var(--portal-size);
+      max-width: 100%;
+      margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+      isolation: isolate;
+      cursor: pointer;
       pointer-events: auto;
+      touch-action: manipulation;
+      outline: none;
+      filter: drop-shadow(0 0 34px rgba(138, 43, 226, .3));
+    }
+
+    #ring-canvas-container::before,
+    #ring-canvas-container::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    #ring-canvas-container::before {
+      inset: 12%;
+      z-index: -2;
+      background: radial-gradient(circle,
+          rgba(214, 175, 255, .2) 0%,
+          rgba(138, 43, 226, .14) 28%,
+          rgba(56, 189, 248, .07) 48%,
+          transparent 72%);
+      filter: blur(34px);
+      animation: portalAura 5.5s ease-in-out infinite;
+    }
+
+    #ring-canvas-container::after {
+      inset: 16%;
+      z-index: -1;
+      border: 1px solid rgba(164, 117, 255, .13);
+      box-shadow:
+        0 0 42px rgba(138, 43, 226, .14),
+        inset 0 0 42px rgba(56, 189, 248, .06);
+      animation: portalAtmosphere 9s linear infinite;
+    }
+
+    #ring-canvas-container:focus-visible {
+      border-radius: 50%;
+      outline: 2px solid rgba(164, 117, 255, .9);
+      outline-offset: -2rem;
     }
 
     #ring-canvas-container canvas {
+      position: relative;
+      z-index: 1;
       display: block;
       width: 100% !important;
       height: 100% !important;
+    }
+
+    #ring-canvas-container.ring-fallback {
+      cursor: default;
+    }
+
+    #ring-canvas-container.ring-fallback::after {
+      inset: 23%;
+      border: 2px solid rgba(103, 232, 249, .42);
+      background: radial-gradient(circle,
+          rgba(168, 85, 247, .16) 0 22%,
+          transparent 23% 48%,
+          rgba(217, 70, 239, .34) 49% 51%,
+          transparent 52%);
+      box-shadow:
+        0 0 34px rgba(56, 189, 248, .28),
+        0 0 76px rgba(138, 43, 226, .3),
+        inset 0 0 42px rgba(217, 70, 239, .2);
+    }
+
+    @keyframes portalAura {
+
+      0%,
+      100% {
+        opacity: .62;
+        transform: scale(.94);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes portalAtmosphere {
+      to {
+        transform: rotate(360deg) scale(1.03);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      #ring-canvas-container::before,
+      #ring-canvas-container::after {
+        animation: none;
+      }
+
+      body.loading #ring-canvas-container,
+      body.loading-exit #ring-canvas-container {
+        transition: none;
+      }
     }
 
     body.loading #ring-canvas-container,
@@ -195,49 +291,26 @@
       top: 50%;
       left: 50%;
       right: auto;
-      width: clamp(200px, 40vw, 260px);
-      height: clamp(200px, 40vw, 260px);
-      transform: translate(-50%, -50%) scale(0.7);
+      width: var(--portal-size);
+      height: var(--portal-size);
+      margin: 0;
+      transform: translate(-50%, -50%) scale(var(--portal-loader-scale));
       z-index: 4;
       pointer-events: none;
       transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     body.loading-exit #ring-canvas-container {
+      width: var(--portal-size);
+      height: var(--portal-size);
       transform:
         translate(calc(-50% + var(--ring-target-x, 0px)), calc(-50% + var(--ring-target-y, 0px))) scale(1);
     }
 
     body.loaded #ring-canvas-container {
-      position: absolute;
-      top: clamp(110px, 16vh, 220px);
-      right: clamp(1rem, 3vw, 3rem);
-      left: auto;
+      position: relative;
+      inset: auto;
       transform: none;
-    }
-
-    /* Tablet */
-    @media (max-width: 1024px) {
-      #ring-canvas-container {
-        width: clamp(280px, 30vw, 360px);
-        height: clamp(280px, 30vw, 360px);
-        right: 1rem;
-      }
-    }
-
-    /* Large desktop: aumentar anel para telas largas */
-    @media (min-width: 1400px) {
-      #ring-canvas-container {
-        width: clamp(360px, 20vw, 460px);
-        height: clamp(360px, 20vw, 460px);
-        right: clamp(1.5rem, 4vw, 4rem);
-        top: clamp(120px, 18vh, 240px);
-      }
-
-      body.loaded #ring-canvas-container {
-        right: clamp(1.5rem, 4vw, 4rem);
-        top: clamp(120px, 18vh, 240px);
-      }
     }
 
     /* Mobile */
@@ -264,43 +337,45 @@
       }
 
       .hero .cta {
-        margin-bottom: 1.2rem;
+        margin-bottom: 0;
         width: 100%;
         max-width: none;
       }
 
       #ring-canvas-container {
+        --portal-size: min(92vw, 560px);
+        --portal-loader-scale: .62;
         position: relative;
-        right: auto;
-        width: min(100vw, 640px);
-        height: min(100vw, 640px);
-        margin: 1.45rem auto 0;
-        opacity: 0.9;
+        inset: auto;
+        width: min(100%, 560px);
+        height: auto;
+        aspect-ratio: 1;
+        margin: 1.35rem auto 0;
+        filter: none;
         order: 2;
         align-self: center;
       }
 
       body.loaded #ring-canvas-container {
         position: relative;
-        top: auto;
-        right: auto;
-        left: auto;
-        width: min(100vw, 640px);
-        height: min(100vw, 640px);
-        margin: 1.25rem auto 0;
+        inset: auto;
+        width: min(100%, 560px);
+        height: auto;
+        aspect-ratio: 1;
+        margin: 1.35rem auto 0;
         transform: none;
         order: 2;
         align-self: center;
       }
+
     }
 
     /* Small Mobile */
     @media (max-width: 480px) {
-      #ring-canvas-container {
-        width: min(100vw, 520px);
-        height: min(100vw, 520px);
-        margin: 1.4rem auto 0;
-        opacity: 0.88;
+      #ring-canvas-container,
+      body.loaded #ring-canvas-container {
+        width: 100%;
+        margin-top: 1rem;
       }
     }
 
@@ -322,33 +397,18 @@
       transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
     }
 
-    @media (max-width: 768px) {
-
-      body.loading #ring-canvas-container,
-      body.loading-exit #ring-canvas-container {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: clamp(200px, 40vw, 280px);
-        height: clamp(200px, 40vw, 280px);
-        transform: scale(0.7);
-        margin: 1rem auto 0;
-      }
-
-      body.loading-exit #ring-canvas-container {
-        transform: scale(1);
-      }
-    }
-
     /* Mobile Landscape */
     @media (max-height: 600px) and (orientation: landscape) {
-      #ring-canvas-container {
+      #ring-canvas-container,
+      body.loaded #ring-canvas-container {
+        --portal-size: min(82vw, 70vh, 520px);
+        --portal-loader-scale: .68;
         position: relative;
-        right: auto;
-        width: 160px;
-        height: 160px;
-        margin: 0.5rem auto 0;
-        opacity: 0.7;
+        inset: auto;
+        width: min(82vw, 70vh, 520px);
+        height: auto;
+        aspect-ratio: 1;
+        margin: 1rem auto 0;
       }
 
       .hero {
@@ -1178,6 +1238,10 @@
 
     .t-item:nth-child(2) {
       animation-delay: 0.2s;
+    }
+
+    .t-item:nth-child(3) {
+      animation-delay: 0.3s;
     }
 
     @keyframes slideIn {

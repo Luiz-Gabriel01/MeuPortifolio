@@ -90,7 +90,8 @@
             id="heroLinkedinText">LinkedIn</span></a>
       </div>
       <!-- 3D Ring Canvas -->
-      <div id="ring-canvas-container"></div>
+      <div id="ring-canvas-container" role="button" tabindex="0"
+        aria-label="Anel cósmico interativo. Pressione para ativar o pulso de energia."></div>
     </section>
 
     <!-- PROJETOS -->
@@ -142,16 +143,19 @@
           </div>
         </article>
         <!-- Card 3 -->
-        <article class="card" data-stack="python">
-          <img class="thumb" src="" alt="Prévia em breve do próximo projeto" loading="lazy" />
+        <article class="card" data-stack="react">
+          <img class="thumb" src="https://tatsuya-ia.vercel.app/og.png" alt="Prévia da plataforma Tatsuya.IA"
+            loading="lazy" />
           <div class="card-body">
-            <h3 id="project3Title">Em breve...</h3>
-            <p class="muted" id="project3Desc">...</p>
+            <h3 id="project3Title">Tatsuya.IA</h3>
+            <p class="muted" id="project3Desc">Plataforma inteligente para conversar, criar, pesquisar e organizar
+              projetos em um único espaço.</p>
             <div class="tags">
-              <span class="tag">...</span><span class="tag">...</span><span class="tag">...</span>
+              <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">IA</span>
             </div>
             <div class="row">
-              <a class="btn" id="project3Btn" href="#"><i class="fa-brands fa-github"></i> Código</a>
+              <a class="btn" id="project3Btn" href="https://tatsuya-ia.vercel.app/" target="_blank"
+                rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
             </div>
           </div>
         </article>
@@ -230,6 +234,11 @@
             digitais bonitos e
             performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.</p>
           <div class="timeline" aria-label="linha do tempo">
+            <div class="t-item" id="timeline3">
+              <div class="t-dot"></div>
+              <b>2026</b> — Tatsuya.IA, plataforma inteligente para conversar, pesquisar e organizar projetos (React +
+              Next.js + IA).
+            </div>
             <div class="t-item" id="timeline1">
               <div class="t-dot"></div>
               <b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).
@@ -244,7 +253,7 @@
             <a class="btn" id="emailBtn"><i class="fa-solid fa-envelope"></i> E-mail</a>
             <a class="btn" id="whatsappBtn" href="https://wa.me/5581987951962" target="_blank" rel="noopener"><i
                 class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a class="btn" id="cvBtn" href="CVLuizGabriel (7).pdf" download="CVLuizGabriel (7).pdf"><i
+            <a class="btn" id="cvBtn" href="CVLuizGabriel_Dev.pdf" download="CVLuizGabriel_Dev.pdf"><i
                 class="fa-solid fa-file-arrow-down"></i> Baixar CV</a>
           </div>
         </div>
@@ -286,6 +295,7 @@
         ogTitle: 'Luiz Gabriel — Desenvolvedor Web Full Stack',
         ogDescription: 'Projetos, habilidades, contato e links sociais.',
         loadingText: 'Código com propósito, soluções que funcionam.',
+        ringLabel: 'Anel cósmico interativo. Pressione para ativar o pulso de energia.',
         navProjects: 'Projetos',
         navSkills: 'Habilidades',
         navAbout: 'Sobre',
@@ -305,15 +315,16 @@
         project1Btn: 'Código',
         project2Desc: 'Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo. Somente para desktop',
         project2Btn: 'Ver projeto',
-        project3Title: 'Em breve...',
-        project3Desc: '...',
-        project3Btn: 'Código',
+        project3Title: 'Tatsuya.IA',
+        project3Desc: 'Plataforma inteligente para conversar, criar, pesquisar e organizar projetos em um único espaço.',
+        project3Btn: 'Ver projeto',
         skillsTitle: 'Habilidades',
         skillIntermediatePlus: 'Intermediário+',
         skillIntermediate: 'Intermediário',
         skillAdvanced: 'Avançado',
         aboutTitle: 'Sobre mim',
         aboutText: 'Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos digitais bonitos e performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.',
+        timeline3: '<b>2026</b> — Tatsuya.IA, plataforma inteligente para conversar, pesquisar e organizar projetos (React + Next.js + IA).',
         timeline1: '<b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).',
         timeline2: '<b>2025</b> — Dashboards React + Node para analytics em tempo real.',
         email: 'E-mail',
@@ -327,6 +338,7 @@
         ogTitle: 'Luiz Gabriel — Full Stack Web Developer',
         ogDescription: 'Projects, skills, contact and social links.',
         loadingText: 'Code with purpose, solutions that work.',
+        ringLabel: 'Interactive cosmic ring. Press to activate the energy pulse.',
         navProjects: 'Projects',
         navSkills: 'Skills',
         navAbout: 'About',
@@ -346,15 +358,16 @@
         project1Btn: 'Code',
         project2Desc: 'Urban safety reporting platform with login, CRUD and interactive map. Desktop only',
         project2Btn: 'View project',
-        project3Title: 'Coming soon...',
-        project3Desc: '...',
-        project3Btn: 'Code',
+        project3Title: 'Tatsuya.IA',
+        project3Desc: 'An intelligent platform to chat, create, research and organize projects in one place.',
+        project3Btn: 'View project',
         skillsTitle: 'Skills',
         skillIntermediatePlus: 'Intermediate+',
         skillIntermediate: 'Intermediate',
         skillAdvanced: 'Advanced',
         aboutTitle: 'About me',
         aboutText: 'I am a full stack web developer. I enjoy turning ideas into beautiful and performant digital products. On the back end I build secure REST APIs; on the front end I focus on accessible UX and microinteractions.',
+        timeline3: '<b>2026</b> — Tatsuya.IA, an intelligent platform to chat, research and organize projects (React + Next.js + AI).',
         timeline1: '<b>2025</b> — Urban reporting platform (PHP + MySQL + Leaflet).',
         timeline2: '<b>2025</b> — React + Node dashboards for real-time analytics.',
         email: 'Email',
@@ -382,6 +395,9 @@
 
       const loadingText = $('#loadingText');
       if (loadingText) loadingText.textContent = copy.loadingText;
+
+      const ringContainer = $('#ring-canvas-container');
+      if (ringContainer) ringContainer.setAttribute('aria-label', copy.ringLabel);
 
       const navProjectsLink = $('#navProjectsLink');
       if (navProjectsLink) navProjectsLink.textContent = copy.navProjects;
@@ -450,7 +466,7 @@
       if (project3Desc) project3Desc.textContent = copy.project3Desc;
 
       const project3Btn = $('#project3Btn');
-      if (project3Btn) project3Btn.innerHTML = `<i class="fa-brands fa-github"></i> ${copy.project3Btn}`;
+      if (project3Btn) project3Btn.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> ${copy.project3Btn}`;
 
       const skillsTitle = $('#skillsTitle');
       if (skillsTitle) skillsTitle.innerHTML = `<span class="dot"></span> ${copy.skillsTitle}`;
@@ -488,6 +504,9 @@
       const aboutText = $('#aboutText');
       if (aboutText) aboutText.textContent = copy.aboutText;
 
+      const timeline3 = $('#timeline3');
+      if (timeline3) timeline3.innerHTML = `<div class="t-dot"></div> ${copy.timeline3}`;
+
       const timeline1 = $('#timeline1');
       if (timeline1) timeline1.innerHTML = `<div class="t-dot"></div> ${copy.timeline1}`;
 
@@ -522,16 +541,16 @@
     const startLoadingSequence = () => {
       const ringContainer = $('#ring-canvas-container');
       if (ringContainer) {
-        requestAnimationFrame(() => {
-          const rect = ringContainer.getBoundingClientRect();
-          const targetX = rect.left + rect.width / 2 - window.innerWidth / 2;
-          const targetY = rect.top + rect.height / 2 - window.innerHeight / 2;
-          root.style.setProperty('--ring-target-x', `${targetX}px`);
-          root.style.setProperty('--ring-target-y', `${targetY}px`);
-        });
+        const rect = ringContainer.getBoundingClientRect();
+        const targetX = rect.left + rect.width / 2 - window.innerWidth / 2;
+        const targetY = rect.top + rect.height / 2 - window.innerHeight / 2;
+        root.style.setProperty('--ring-target-x', `${targetX}px`);
+        root.style.setProperty('--ring-target-y', `${targetY}px`);
       }
 
       body.classList.add('loading');
+      const loadingInertTargets = $$('.skip, header, main, footer');
+      loadingInertTargets.forEach(element => element.setAttribute('inert', ''));
       if (loadingScreen) loadingScreen.setAttribute('aria-hidden', 'false');
 
       loadingState.active = true;
@@ -544,10 +563,15 @@
       const startTime = performance.now();
       let assetsReady = false;
 
-      Promise.all([
-        document.fonts ? document.fonts.ready : Promise.resolve(),
-        ringReadyPromise
+      Promise.race([
+        Promise.all([
+          document.fonts ? document.fonts.ready : Promise.resolve(),
+          ringReadyPromise
+        ]),
+        new Promise(resolve => setTimeout(resolve, 3500))
       ]).then(() => {
+        assetsReady = true;
+      }).catch(() => {
         assetsReady = true;
       });
 
@@ -580,6 +604,7 @@
           loadingState.glowBoost = 0;
           body.classList.remove('loading', 'loading-exit');
           body.classList.add('loaded');
+          loadingInertTargets.forEach(element => element.removeAttribute('inert'));
           if (loadingScreen) loadingScreen.setAttribute('aria-hidden', 'true');
           return;
         }
@@ -595,12 +620,18 @@
     // ========== COSMIC BACKGROUND (FULL PAGE) ==========
     (function initCosmicBackground() {
       const container = $('#cosmic-background-canvas');
-      if (!container) return;
+      if (!container || !window.THREE) return;
 
       // Scene setup
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      } catch (error) {
+        console.warn('Cosmic background unavailable:', error);
+        return;
+      }
 
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -611,9 +642,10 @@
       // Detectar dispositivo móvel/tablet
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const isTablet = /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(navigator.userAgent);
+      const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
 
       // Ajustar qualidade baseado no dispositivo (ainda mais reduzido para mobile premium)
-      const particleReduction = isMobile ? 0.3 : (isTablet ? 0.6 : 1);
+      const particleReduction = (isMobile || hasCoarsePointer) ? 0.3 : (isTablet ? 0.6 : 1);
 
       // Nebula particles (distant haze)
       const nebulaGeometry = new THREE.BufferGeometry();
@@ -775,20 +807,54 @@
       const container = $('#ring-canvas-container');
       if (!container) return;
 
+      const resolveRingReady = () => {
+        if (window.__ringReadyResolve) window.__ringReadyResolve();
+      };
+
+      const showRingFallback = () => {
+        container.classList.add('ring-fallback');
+        container.removeAttribute('role');
+        container.removeAttribute('tabindex');
+        container.setAttribute('aria-hidden', 'true');
+        resolveRingReady();
+      };
+
+      if (!window.THREE) {
+        showRingFallback();
+        return;
+      }
+
       // Scene setup
       const scene = new THREE.Scene();
       let canvasWidth = container.clientWidth;
       let canvasHeight = container.clientHeight;
 
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reduceQuality = isMobileDevice || hasCoarsePointer || window.innerWidth < 900 || prefersReducedMotion;
+      const motionFactor = prefersReducedMotion ? 0.18 : 1;
+
       // Garantir dimensões mínimas para evitar erros
       if (canvasWidth < 100) canvasWidth = 240;
       if (canvasHeight < 100) canvasHeight = 240;
 
-      const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      const camera = new THREE.PerspectiveCamera(48, canvasWidth / canvasHeight, 0.1, 1000);
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !reduceQuality });
+      } catch (error) {
+        console.warn('Interactive ring unavailable:', error);
+        showRingFallback();
+        return;
+      }
 
       renderer.setSize(canvasWidth, canvasHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, reduceQuality ? 1.35 : 2));
+      renderer.setClearColor(0x000000, 0);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.25;
 
       // Prevent canvas overflow
       const canvas = renderer.domElement;
@@ -796,11 +862,7 @@
       canvas.style.maxHeight = '100%';
       container.appendChild(canvas);
 
-      camera.position.z = 5;
-
-      // Detectar dispositivo móvel para otimização
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      const reduceQuality = isMobileDevice || window.innerWidth < 768;
+      camera.position.z = 4.8;
 
       const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
       const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
@@ -813,6 +875,7 @@
         start: 0,
         anticipationStart: 0,
         pauseStart: 0,
+        burstStart: -Infinity,
         separation: 0,
         rotationSlowdown: 1,
         glowBoost: 0
@@ -827,21 +890,29 @@
       };
 
       // Modular ring segments
-      const segmentCount = reduceQuality ? 8 : 12;
+      const segmentCount = reduceQuality ? 9 : 16;
       const segments = [];
       const segmentGroup = new THREE.Group();
+      const portalViolet = new THREE.Color(0x8a2be2);
+      const portalCyan = new THREE.Color(0x38bdf8);
 
       for (let i = 0; i < segmentCount; i++) {
         const angle = (i / segmentCount) * Math.PI * 2;
-        const arcLength = (Math.PI * 2) / segmentCount * 0.85;
+        const arcLength = (Math.PI * 2) / segmentCount * 0.78;
 
-        const segmentGeometry = new THREE.TorusGeometry(1.2, 0.05, 16, 32, arcLength);
+        const segmentGeometry = new THREE.TorusGeometry(
+          1.22,
+          reduceQuality ? 0.052 : 0.062,
+          reduceQuality ? 10 : 16,
+          reduceQuality ? 24 : 40,
+          arcLength
+        );
         const segmentMaterial = new THREE.MeshStandardMaterial({
-          color: 0x0a0a0a,
+          color: 0x080811,
           emissive: 0x8a2be2,
-          emissiveIntensity: 0.3,
-          metalness: 0.9,
-          roughness: 0.3
+          emissiveIntensity: 0.55,
+          metalness: 0.88,
+          roughness: 0.2
         });
 
         const segment = new THREE.Mesh(segmentGeometry, segmentMaterial);
@@ -850,7 +921,8 @@
           baseRotation: angle,
           offset: Math.random() * 0.1,
           speed: 0.5 + Math.random() * 0.5,
-          phase: Math.random() * Math.PI * 2
+          phase: Math.random() * Math.PI * 2,
+          colorPhase: i / segmentCount
         };
 
         segments.push(segment);
@@ -859,18 +931,245 @@
       scene.add(segmentGroup);
 
       const updateRingScale = () => {
-        const width = Math.max(window.innerWidth, 1);
-        const height = Math.max(window.innerHeight, 1);
-        const aspect = width / height;
-        // Em telas maiores, aumentamos proporcionalmente o fator de largura
-        // para que o anel cresca mais em desktops amplos.
-        const widthFactor = clamp(width / 2100, 0.48, 0.82);
-        const aspectFactor = aspect > 1.6 ? 0.94 : (aspect < 0.9 ? 1.04 : 1);
-        const scale = widthFactor * aspectFactor;
-        segmentGroup.scale.set(scale, scale, scale);
+        const aspect = Math.max(container.clientWidth, 1) / Math.max(container.clientHeight, 1);
+        const aspectFactor = aspect > 1.35 ? 0.92 : (aspect < 0.75 ? 0.94 : 1);
+        segmentGroup.scale.setScalar(aspectFactor);
       };
 
       updateRingScale();
+
+      const createRadialTexture = (stops, size = 256) => {
+        const textureCanvas = document.createElement('canvas');
+        textureCanvas.width = size;
+        textureCanvas.height = size;
+        const context = textureCanvas.getContext('2d');
+        const gradient = context.createRadialGradient(
+          size / 2,
+          size / 2,
+          0,
+          size / 2,
+          size / 2,
+          size / 2
+        );
+        stops.forEach(([position, color]) => gradient.addColorStop(position, color));
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, size, size);
+        const texture = new THREE.CanvasTexture(textureCanvas);
+        texture.encoding = THREE.sRGBEncoding;
+        return texture;
+      };
+
+      const createNebulaTexture = () => {
+        const size = reduceQuality ? 192 : 320;
+        const textureCanvas = document.createElement('canvas');
+        textureCanvas.width = size;
+        textureCanvas.height = size;
+        const context = textureCanvas.getContext('2d');
+        context.clearRect(0, 0, size, size);
+        context.globalCompositeOperation = 'lighter';
+
+        const clouds = reduceQuality ? 9 : 18;
+        const palette = [
+          [138, 43, 226],
+          [217, 70, 239],
+          [56, 189, 248],
+          [99, 102, 241]
+        ];
+
+        for (let i = 0; i < clouds; i++) {
+          const [red, green, blue] = palette[i % palette.length];
+          const x = size * (0.2 + Math.random() * 0.6);
+          const y = size * (0.2 + Math.random() * 0.6);
+          const radius = size * (0.12 + Math.random() * 0.24);
+          const cloud = context.createRadialGradient(x, y, 0, x, y, radius);
+          cloud.addColorStop(0, `rgba(${red}, ${green}, ${blue}, ${0.08 + Math.random() * 0.08})`);
+          cloud.addColorStop(0.45, `rgba(${red}, ${green}, ${blue}, 0.035)`);
+          cloud.addColorStop(1, `rgba(${red}, ${green}, ${blue}, 0)`);
+          context.fillStyle = cloud;
+          context.fillRect(0, 0, size, size);
+        }
+
+        const vignette = context.createRadialGradient(
+          size / 2,
+          size / 2,
+          size * 0.08,
+          size / 2,
+          size / 2,
+          size * 0.5
+        );
+        vignette.addColorStop(0, 'rgba(174, 117, 255, 0.18)');
+        vignette.addColorStop(0.5, 'rgba(75, 0, 130, 0.06)');
+        vignette.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        context.fillStyle = vignette;
+        context.fillRect(0, 0, size, size);
+
+        const texture = new THREE.CanvasTexture(textureCanvas);
+        texture.encoding = THREE.sRGBEncoding;
+        return texture;
+      };
+
+      // Volumetric-looking nebula and portal glow, generated without external assets.
+      const nebulaSpriteMaterial = new THREE.SpriteMaterial({
+        map: createNebulaTexture(),
+        color: 0xffffff,
+        transparent: true,
+        opacity: reduceQuality ? 0.55 : 0.72,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const nebulaSprite = new THREE.Sprite(nebulaSpriteMaterial);
+      nebulaSprite.scale.set(3.7, 3.7, 1);
+      nebulaSprite.position.z = -0.42;
+      segmentGroup.add(nebulaSprite);
+
+      const eventHorizon = new THREE.Mesh(
+        new THREE.CircleGeometry(1.04, reduceQuality ? 48 : 96),
+        new THREE.MeshBasicMaterial({
+          color: 0x5b21b6,
+          transparent: true,
+          opacity: 0.055,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending
+        })
+      );
+      eventHorizon.position.z = -0.08;
+      segmentGroup.add(eventHorizon);
+
+      // Layered halos give the portal depth without a costly post-processing pass.
+      const haloRings = [];
+      [
+        { radius: 1.39, tube: 0.012, color: 0x38bdf8, opacity: 0.32, speed: 0.0011 },
+        { radius: 1.52, tube: 0.009, color: 0xd946ef, opacity: 0.22, speed: -0.0008 },
+        { radius: 1.67, tube: 0.006, color: 0x8b5cf6, opacity: 0.14, speed: 0.00055 }
+      ].forEach((spec, index) => {
+        const halo = new THREE.Mesh(
+          new THREE.TorusGeometry(spec.radius, spec.tube, 8, reduceQuality ? 72 : 128),
+          new THREE.MeshBasicMaterial({
+            color: spec.color,
+            transparent: true,
+            opacity: spec.opacity,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending
+          })
+        );
+        halo.rotation.x = (index - 1) * 0.07;
+        halo.userData = { speed: spec.speed, baseOpacity: spec.opacity };
+        haloRings.push(halo);
+        segmentGroup.add(halo);
+      });
+
+      // Pulsating energy core and holographic shell.
+      const coreGroup = new THREE.Group();
+      const energyCoreMaterial = new THREE.MeshStandardMaterial({
+        color: 0x120b2d,
+        emissive: 0xa855f7,
+        emissiveIntensity: 2.2,
+        metalness: 0.58,
+        roughness: 0.16,
+        transparent: true,
+        opacity: 0.96
+      });
+      const energyCore = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(0.27, reduceQuality ? 1 : 2),
+        energyCoreMaterial
+      );
+      coreGroup.add(energyCore);
+
+      const coreShell = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(0.42, reduceQuality ? 1 : 2),
+        new THREE.MeshBasicMaterial({
+          color: 0x67e8f9,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.22,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending
+        })
+      );
+      coreGroup.add(coreShell);
+
+      const coreGlowMaterial = new THREE.SpriteMaterial({
+        map: createRadialTexture([
+          [0, 'rgba(255,255,255,1)'],
+          [0.12, 'rgba(186,230,253,.95)'],
+          [0.34, 'rgba(168,85,247,.5)'],
+          [1, 'rgba(76,29,149,0)']
+        ]),
+        transparent: true,
+        opacity: 0.9,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const coreGlow = new THREE.Sprite(coreGlowMaterial);
+      coreGlow.scale.set(1.45, 1.45, 1);
+      coreGlow.position.z = -0.04;
+      coreGroup.add(coreGlow);
+      segmentGroup.add(coreGroup);
+
+      // Inclined holographic orbits and moving satellites create parallax.
+      const orbitals = [];
+      const orbitSpecs = [
+        { radius: 1.46, tiltX: 0.92, tiltY: 0.18, color: 0x67e8f9, speed: 0.007 },
+        { radius: 1.58, tiltX: -0.64, tiltY: 0.55, color: 0xd946ef, speed: -0.005 },
+        { radius: 1.73, tiltX: 0.38, tiltY: -0.72, color: 0xa78bfa, speed: 0.0035 }
+      ].slice(0, reduceQuality ? 2 : 3);
+
+      orbitSpecs.forEach((spec, orbitIndex) => {
+        const orbitGroup = new THREE.Group();
+        orbitGroup.rotation.x = spec.tiltX;
+        orbitGroup.rotation.y = spec.tiltY;
+
+        const track = new THREE.Mesh(
+          new THREE.TorusGeometry(spec.radius, 0.005, 6, reduceQuality ? 64 : 112),
+          new THREE.MeshBasicMaterial({
+            color: spec.color,
+            transparent: true,
+            opacity: 0.16,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending
+          })
+        );
+        orbitGroup.add(track);
+
+        const nodes = [];
+        const nodeCount = reduceQuality ? 1 : 2;
+        for (let nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
+          const node = new THREE.Mesh(
+            new THREE.SphereGeometry(0.028 + orbitIndex * 0.004, 8, 8),
+            new THREE.MeshBasicMaterial({
+              color: spec.color,
+              transparent: true,
+              opacity: 0.95,
+              blending: THREE.AdditiveBlending
+            })
+          );
+          node.userData.angle = (nodeIndex / nodeCount) * Math.PI * 2 + orbitIndex;
+          orbitGroup.add(node);
+          nodes.push(node);
+        }
+
+        orbitals.push({ group: orbitGroup, nodes, radius: spec.radius, speed: spec.speed });
+        segmentGroup.add(orbitGroup);
+      });
+
+      const shockwaves = [];
+      for (let i = 0; i < 3; i++) {
+        const shockwave = new THREE.Mesh(
+          new THREE.TorusGeometry(1.2, 0.01, 6, reduceQuality ? 64 : 112),
+          new THREE.MeshBasicMaterial({
+            color: i === 1 ? 0x38bdf8 : 0xd946ef,
+            transparent: true,
+            opacity: 0,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending
+          })
+        );
+        shockwave.visible = false;
+        shockwave.userData.delay = i * 120;
+        shockwaves.push(shockwave);
+        segmentGroup.add(shockwave);
+      }
 
       // Energy core rings
       const coreRings = [];
@@ -890,96 +1189,166 @@
 
       // Data pulse particles (menos em mobile)
       const dataPulseGeometry = new THREE.BufferGeometry();
-      const pulseCount = reduceQuality ? 80 : 150;
+      const pulseCount = reduceQuality ? 70 : 180;
       const pulsePositions = new Float32Array(pulseCount * 3);
       const pulseVelocities = [];
 
       for (let i = 0; i < pulseCount; i++) {
         const angle = Math.random() * Math.PI * 2;
-        const radius = 1.2;
+        const radius = 1.16 + Math.random() * 0.14;
         pulsePositions[i * 3] = Math.cos(angle) * radius;
-        pulsePositions[i * 3 + 1] = (Math.random() - 0.5) * 0.15;
-        pulsePositions[i * 3 + 2] = Math.sin(angle) * radius;
+        pulsePositions[i * 3 + 1] = Math.sin(angle) * radius;
+        pulsePositions[i * 3 + 2] = (Math.random() - 0.5) * 0.18;
 
         pulseVelocities.push({
           angle: angle,
-          speed: 0.02 + Math.random() * 0.03,
-          verticalSpeed: (Math.random() - 0.5) * 0.002
+          radius,
+          speed: 0.012 + Math.random() * 0.028,
+          depth: (Math.random() - 0.5) * 0.18,
+          phase: Math.random() * Math.PI * 2
         });
       }
 
       dataPulseGeometry.setAttribute('position', new THREE.BufferAttribute(pulsePositions, 3));
       const dataPulseMaterial = new THREE.PointsMaterial({
         color: 0xdd88ff,
-        size: 0.025,
+        map: createRadialTexture([
+          [0, 'rgba(255,255,255,1)'],
+          [0.22, 'rgba(216,180,254,.95)'],
+          [1, 'rgba(139,92,246,0)']
+        ], 64),
+        size: reduceQuality ? 0.038 : 0.048,
         transparent: true,
         opacity: 0.9,
-        blending: THREE.AdditiveBlending
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        sizeAttenuation: true
       });
       const dataPulses = new THREE.Points(dataPulseGeometry, dataPulseMaterial);
       segmentGroup.add(dataPulses);
 
       // Distortion field particles (menos em mobile)
       const distortionGeometry = new THREE.BufferGeometry();
-      const distortionCount = reduceQuality ? 40 : 80;
+      const distortionCount = reduceQuality ? 55 : 150;
       const distortionPositions = new Float32Array(distortionCount * 3);
+      const distortionColors = new Float32Array(distortionCount * 3);
+      const distortionData = [];
+      const dustPalette = [
+        new THREE.Color(0x8b5cf6),
+        new THREE.Color(0x38bdf8),
+        new THREE.Color(0xd946ef)
+      ];
 
       for (let i = 0; i < distortionCount; i++) {
         const angle = Math.random() * Math.PI * 2;
-        const radius = 1.3 + Math.random() * 0.4;
+        const radius = 1.3 + Math.random() * 0.62;
+        const depth = (Math.random() - 0.5) * 0.72;
         distortionPositions[i * 3] = Math.cos(angle) * radius;
-        distortionPositions[i * 3 + 1] = (Math.random() - 0.5) * 0.6;
-        distortionPositions[i * 3 + 2] = Math.sin(angle) * radius;
+        distortionPositions[i * 3 + 1] = Math.sin(angle) * radius;
+        distortionPositions[i * 3 + 2] = depth;
+
+        const color = dustPalette[i % dustPalette.length];
+        distortionColors[i * 3] = color.r;
+        distortionColors[i * 3 + 1] = color.g;
+        distortionColors[i * 3 + 2] = color.b;
+
+        distortionData.push({
+          angle,
+          radius,
+          depth,
+          speed: 0.0012 + Math.random() * 0.0024,
+          phase: Math.random() * Math.PI * 2
+        });
       }
 
       distortionGeometry.setAttribute('position', new THREE.BufferAttribute(distortionPositions, 3));
+      distortionGeometry.setAttribute('color', new THREE.BufferAttribute(distortionColors, 3));
       const distortionMaterial = new THREE.PointsMaterial({
-        color: 0x4b0082,
-        size: 0.015,
+        map: createRadialTexture([
+          [0, 'rgba(255,255,255,1)'],
+          [0.18, 'rgba(255,255,255,.8)'],
+          [1, 'rgba(255,255,255,0)']
+        ], 64),
+        vertexColors: true,
+        size: reduceQuality ? 0.026 : 0.034,
         transparent: true,
-        opacity: 0.3,
-        blending: THREE.AdditiveBlending
+        opacity: 0.5,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        sizeAttenuation: true
       });
       const distortionField = new THREE.Points(distortionGeometry, distortionMaterial);
       segmentGroup.add(distortionField);
 
+      // Short radial streaks suggest matter being pulled into the portal.
+      const trailCount = reduceQuality ? 24 : 58;
+      const trailPositions = new Float32Array(trailCount * 6);
+      const trailData = [];
+      for (let i = 0; i < trailCount; i++) {
+        trailData.push({
+          angle: Math.random() * Math.PI * 2,
+          radius: 1.34 + Math.random() * 0.58,
+          length: 0.06 + Math.random() * 0.16,
+          depth: (Math.random() - 0.5) * 0.5,
+          speed: 0.001 + Math.random() * 0.003,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+      const trailGeometry = new THREE.BufferGeometry();
+      trailGeometry.setAttribute('position', new THREE.BufferAttribute(trailPositions, 3));
+      const trailMaterial = new THREE.LineBasicMaterial({
+        color: 0x8be9fd,
+        transparent: true,
+        opacity: 0.2,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+      });
+      const energyTrails = new THREE.LineSegments(trailGeometry, trailMaterial);
+      segmentGroup.add(energyTrails);
+
       // Cinematic lighting
-      const ambientLight = new THREE.AmbientLight(0x0a0a14, 0.3);
+      const ambientLight = new THREE.AmbientLight(0x15102b, 0.34);
       scene.add(ambientLight);
 
-      const keyLight = new THREE.PointLight(0x8a2be2, 3, 15);
+      const keyLight = new THREE.PointLight(0xa855f7, 3.4, 15);
       keyLight.position.set(3, 2, 4);
       scene.add(keyLight);
 
-      const fillLight = new THREE.PointLight(0xbb00ff, 2, 12);
+      const fillLight = new THREE.PointLight(0x38bdf8, 2.3, 12);
       fillLight.position.set(-3, -2, 3);
       scene.add(fillLight);
 
-      const rimLight = new THREE.PointLight(0xdd88ff, 1.5, 10);
+      const rimLight = new THREE.PointLight(0xf472b6, 1.8, 10);
       rimLight.position.set(0, 3, -2);
       scene.add(rimLight);
 
       // Interaction
       let mouseX = 0;
       let mouseY = 0;
-      let targetRotationX = 0.3;
+      let targetRotationX = 0.18;
       let targetRotationY = 0;
 
       const triggerDecomposition = () => {
         if (interaction.mode !== 'idle') return;
         interaction.mode = 'anticipation';
         interaction.anticipationStart = performance.now();
+        interaction.burstStart = interaction.anticipationStart;
       };
 
       container.addEventListener('click', triggerDecomposition);
       container.addEventListener('touchstart', triggerDecomposition, { passive: true });
+      container.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        triggerDecomposition();
+      });
 
       // Mouse movement
       document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-        targetRotationY = mouseX * 0.4;
-        targetRotationX = mouseY * 0.4 + 0.3;
+        targetRotationY = mouseX * 0.34;
+        targetRotationX = mouseY * 0.28 + 0.18;
       });
 
       // Touch support
@@ -988,29 +1357,42 @@
           const touch = event.touches[0];
           mouseX = (touch.clientX / window.innerWidth) * 2 - 1;
           mouseY = -(touch.clientY / window.innerHeight) * 2 + 1;
-          targetRotationY = mouseX * 0.4;
-          targetRotationX = mouseY * 0.4 + 0.3;
+          targetRotationY = mouseX * 0.28;
+          targetRotationX = mouseY * 0.22 + 0.18;
         }
       }, { passive: true });
 
-      // Rotação automática suave em mobile se não houver interação
-      let autoRotate = reduceQuality;
+      // Rotação automática suave até a primeira interação.
+      let autoRotate = !prefersReducedMotion;
       document.addEventListener('touchstart', () => { autoRotate = false; }, { once: true });
       document.addEventListener('mousemove', () => { autoRotate = false; }, { once: true });
 
       let ringReadyResolved = false;
+      let lastReducedMotionFrame = 0;
+      let ringIsVisible = true;
+      if ('IntersectionObserver' in window) {
+        const ringVisibilityObserver = new IntersectionObserver(([entry]) => {
+          ringIsVisible = entry.isIntersecting || loadingState.active;
+        }, { rootMargin: '180px' });
+        ringVisibilityObserver.observe(container);
+      }
 
       // Animation loop
       function animate() {
         requestAnimationFrame(animate);
-        const time = Date.now() * 0.001;
 
         if (!ringReadyResolved) {
           ringReadyResolved = true;
-          if (window.__ringReadyResolve) window.__ringReadyResolve();
+          resolveRingReady();
         }
 
+        if ((!ringIsVisible && !loadingState.active) || document.hidden) return;
+
         const now = performance.now();
+        if (prefersReducedMotion && !loadingState.active && now - lastReducedMotionFrame < 90) return;
+        lastReducedMotionFrame = now;
+
+        const time = Date.now() * 0.001;
         if (interaction.mode === 'anticipation') {
           const t = clamp((now - interaction.anticipationStart) / timing.anticipation, 0, 1);
           interaction.separation = 0;
@@ -1057,7 +1439,7 @@
         }
 
         // Segment self-realignment (mais lento em mobile)
-        const segmentSpeed = reduceQuality ? 0.3 : 1;
+        const segmentSpeed = (reduceQuality ? 0.42 : 1) * motionFactor;
         segments.forEach((segment, i) => {
           const offset = Math.sin(time * segment.userData.speed * segmentSpeed + segment.userData.phase) * 0.08;
           const separation = interaction.separation;
@@ -1072,21 +1454,83 @@
           segment.rotation.y = separation * 0.18 * (i % 3 - 1);
           segment.rotation.z = segment.userData.baseRotation + offset + separation * 0.35 * (i % 2 === 0 ? 1 : -1);
 
-          const pulseSpeed = reduceQuality ? 1 : 2;
+          const pulseSpeed = (reduceQuality ? 1 : 2) * motionFactor;
           const pulse = Math.sin(time * pulseSpeed + i * 0.5) * 0.3 + 0.7;
+          const colorMix = clamp(
+            0.24 + Math.sin(time * 0.42 + segment.userData.colorPhase * Math.PI * 2) * 0.24,
+            0,
+            0.55
+          );
+          segment.material.emissive.copy(portalViolet).lerp(portalCyan, colorMix);
           const segmentFill = loadingState.active
             ? clamp((loadingState.progress - i / segmentCount * 0.45) / 0.55, 0, 1)
             : 0;
-          segment.material.emissiveIntensity = Math.min(1.6, pulse + interaction.glowBoost + loadingState.glowBoost + segmentFill * 0.25);
+          segment.material.emissiveIntensity = Math.min(
+            2,
+            pulse + 0.2 + interaction.glowBoost + loadingState.glowBoost + segmentFill * 0.35
+          );
         });
 
         // Core ring rotation (mais lento em mobile)
         const coreSpeed = reduceQuality ? 0.4 : 1;
         coreRings.forEach((ring, i) => {
-          ring.rotation.z += ring.userData.speed * coreSpeed * (i % 2 === 0 ? 1 : -1);
+          ring.rotation.z += ring.userData.speed * coreSpeed * motionFactor * (i % 2 === 0 ? 1 : -1);
           ring.material.opacity = loadingState.active
             ? (0.4 - i * 0.1) * (0.5 + loadingState.progress * 0.8)
             : (0.4 - i * 0.1);
+        });
+
+        const cosmicPulse = prefersReducedMotion ? 0.5 : Math.sin(time * 2.15) * 0.5 + 0.5;
+        haloRings.forEach((halo, i) => {
+          halo.rotation.z += halo.userData.speed * motionFactor * (reduceQuality ? 0.65 : 1);
+          halo.material.opacity = halo.userData.baseOpacity
+            + cosmicPulse * 0.08
+            + interaction.glowBoost * 0.12;
+          const haloScale = 1 + Math.sin(time * (0.55 + i * 0.1) + i) * 0.012 * motionFactor;
+          halo.scale.setScalar(haloScale);
+        });
+
+        energyCore.rotation.x += 0.0042 * motionFactor;
+        energyCore.rotation.y -= 0.0055 * motionFactor;
+        coreShell.rotation.x -= 0.0028 * motionFactor;
+        coreShell.rotation.y += 0.004 * motionFactor;
+        const coreScale = 0.94 + cosmicPulse * 0.1 + interaction.glowBoost * 0.12;
+        coreGroup.scale.setScalar(coreScale);
+        energyCoreMaterial.emissiveIntensity = 1.8 + cosmicPulse * 1.25 + interaction.glowBoost * 1.6;
+        coreGlowMaterial.opacity = 0.68 + cosmicPulse * 0.24;
+        coreGlow.scale.setScalar(1.34 + cosmicPulse * 0.18 + interaction.glowBoost * 0.24);
+
+        nebulaSpriteMaterial.rotation += 0.00045 * motionFactor;
+        nebulaSpriteMaterial.opacity = (reduceQuality ? 0.48 : 0.62)
+          + cosmicPulse * 0.1
+          + interaction.glowBoost * 0.08;
+        eventHorizon.rotation.z -= 0.0007 * motionFactor;
+        eventHorizon.material.opacity = 0.045 + cosmicPulse * 0.025 + interaction.glowBoost * 0.04;
+
+        orbitals.forEach((orbit, orbitIndex) => {
+          orbit.group.rotation.z += orbit.speed * 0.22 * motionFactor;
+          orbit.nodes.forEach((node, nodeIndex) => {
+            node.userData.angle += orbit.speed * motionFactor * (1.3 + nodeIndex * 0.2);
+            node.position.set(
+              Math.cos(node.userData.angle) * orbit.radius,
+              Math.sin(node.userData.angle) * orbit.radius,
+              0
+            );
+            node.scale.setScalar(0.85 + Math.sin(time * 3 + orbitIndex + nodeIndex) * 0.2);
+          });
+        });
+
+        const shockwaveElapsed = now - interaction.burstStart;
+        shockwaves.forEach((shockwave) => {
+          const localElapsed = shockwaveElapsed - shockwave.userData.delay;
+          const shockProgress = clamp(localElapsed / 1050, 0, 1);
+          const active = localElapsed >= 0 && shockProgress < 1;
+          shockwave.visible = active;
+          if (active) {
+            const shockScale = 1 + easeOutCubic(shockProgress) * 0.72;
+            shockwave.scale.setScalar(shockScale);
+            shockwave.material.opacity = (1 - shockProgress) * 0.5;
+          }
         });
 
         // Data pulses movement (mais lento em mobile)
@@ -1094,82 +1538,101 @@
         const positions = dataPulses.geometry.attributes.position.array;
         for (let i = 0; i < pulseCount; i++) {
           const vel = pulseVelocities[i];
-          vel.angle += vel.speed * pulseSpeed;
+          vel.angle += vel.speed * pulseSpeed * motionFactor * (1 + interaction.glowBoost * 0.7);
+          const radialPulse = vel.radius + Math.sin(time * 1.4 + vel.phase) * 0.035;
 
-          positions[i * 3] = Math.cos(vel.angle) * 1.2;
-          positions[i * 3 + 1] += vel.verticalSpeed * pulseSpeed;
-          positions[i * 3 + 2] = Math.sin(vel.angle) * 1.2;
-
-          if (Math.abs(positions[i * 3 + 1]) > 0.2) {
-            vel.verticalSpeed *= -1;
-          }
+          positions[i * 3] = Math.cos(vel.angle) * radialPulse;
+          positions[i * 3 + 1] = Math.sin(vel.angle) * radialPulse;
+          positions[i * 3 + 2] = vel.depth + Math.sin(time * 0.9 + vel.phase) * 0.055;
         }
         dataPulses.geometry.attributes.position.needsUpdate = true;
         dataPulseMaterial.opacity = loadingState.active
           ? 0.2 + loadingState.progress * 0.7
           : 0.9;
 
-        // Distortion field subtle movement
+        // Spiral dust and energy streaks
         const distortPos = distortionField.geometry.attributes.position.array;
         for (let i = 0; i < distortionCount; i++) {
-          const wave = Math.sin(time * 0.5 + i * 0.1) * 0.01;
-          distortPos[i * 3 + 1] += wave;
+          const dust = distortionData[i];
+          dust.angle += dust.speed * motionFactor * (1 + interaction.glowBoost);
+          const spiralRadius = dust.radius + Math.sin(time * 0.45 + dust.phase) * 0.08;
+          distortPos[i * 3] = Math.cos(dust.angle) * spiralRadius;
+          distortPos[i * 3 + 1] = Math.sin(dust.angle) * spiralRadius;
+          distortPos[i * 3 + 2] = dust.depth + Math.sin(time * 0.72 + dust.phase) * 0.12;
         }
         distortionField.geometry.attributes.position.needsUpdate = true;
-        distortionField.rotation.z += 0.0005;
+        distortionField.rotation.z += 0.00028 * motionFactor;
         distortionMaterial.opacity = loadingState.active
-          ? 0.1 + loadingState.progress * 0.25
-          : 0.3;
+          ? 0.14 + loadingState.progress * 0.36
+          : 0.48 + interaction.glowBoost * 0.18;
+
+        for (let i = 0; i < trailCount; i++) {
+          const trail = trailData[i];
+          trail.angle += trail.speed * motionFactor * (1 + interaction.glowBoost * 1.5);
+          const radius = trail.radius + Math.sin(time * 0.6 + trail.phase) * 0.08;
+          const length = trail.length * (1 + interaction.glowBoost * 1.8);
+          const baseIndex = i * 6;
+          trailPositions[baseIndex] = Math.cos(trail.angle) * radius;
+          trailPositions[baseIndex + 1] = Math.sin(trail.angle) * radius;
+          trailPositions[baseIndex + 2] = trail.depth;
+          trailPositions[baseIndex + 3] = Math.cos(trail.angle) * (radius + length);
+          trailPositions[baseIndex + 4] = Math.sin(trail.angle) * (radius + length);
+          trailPositions[baseIndex + 5] = trail.depth + Math.sin(trail.phase + time) * 0.025;
+        }
+        trailGeometry.attributes.position.needsUpdate = true;
+        trailMaterial.opacity = 0.16 + cosmicPulse * 0.09 + interaction.glowBoost * 0.22;
 
         // Smooth group rotation (muito mais lento em mobile)
-        const groupRotationSpeed = (reduceQuality ? 0.3 : 1) * interaction.rotationSlowdown * (loadingState.active ? loadingState.speedMultiplier : 1);
+        const groupRotationSpeed = (reduceQuality ? 0.38 : 1)
+          * motionFactor
+          * interaction.rotationSlowdown
+          * (loadingState.active ? loadingState.speedMultiplier : 1);
         if (autoRotate) {
           targetRotationY = Math.sin(time * 0.2 * groupRotationSpeed) * 0.3;
         }
-        segmentGroup.rotation.x += (targetRotationX - segmentGroup.rotation.x) * 0.05;
-        segmentGroup.rotation.y += (targetRotationY - segmentGroup.rotation.y) * 0.05;
-        segmentGroup.rotation.z += 0.002 * groupRotationSpeed;
+        segmentGroup.rotation.x += (targetRotationX - segmentGroup.rotation.x) * 0.045;
+        segmentGroup.rotation.y += (targetRotationY - segmentGroup.rotation.y) * 0.045;
+        segmentGroup.rotation.z += 0.0015 * groupRotationSpeed;
 
         // Light animation (mais suave em mobile)
-        const lightIntensity = reduceQuality ? 0.5 : 1;
-        keyLight.intensity = (2.5 + Math.sin(time * 0.8) * 0.5) * lightIntensity;
-        fillLight.intensity = (1.8 + Math.cos(time * 1.2) * 0.3) * lightIntensity;
+        const lightIntensity = reduceQuality ? 0.62 : 1;
+        keyLight.intensity = (2.8 + Math.sin(time * 0.8) * 0.6 + interaction.glowBoost) * lightIntensity;
+        fillLight.intensity = (2 + Math.cos(time * 1.2) * 0.45 + cosmicPulse * 0.3) * lightIntensity;
+        rimLight.intensity = (1.4 + cosmicPulse * 0.65) * lightIntensity;
 
         renderer.render(scene, camera);
       }
 
       animate();
 
-      // Responsive resize
-      window.addEventListener('resize', () => {
-        let newWidth = container.clientWidth;
-        let newHeight = container.clientHeight;
-
-        // Garantir dimensões mínimas
-        if (newWidth < 100) newWidth = 240;
-        if (newHeight < 100) newHeight = 240;
-
-        camera.aspect = newWidth / newHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(newWidth, newHeight);
-        updateRingScale();
-      });
-
-      // Orientation change support
-      window.addEventListener('orientationchange', () => {
-        setTimeout(() => {
+      // ResizeObserver keeps the large canvas sharp while the loading portal expands.
+      let resizeFrame = 0;
+      const resizeRing = () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => {
           let newWidth = container.clientWidth;
           let newHeight = container.clientHeight;
 
-          // Garantir dimensões mínimas
           if (newWidth < 100) newWidth = 240;
           if (newHeight < 100) newHeight = 240;
 
           camera.aspect = newWidth / newHeight;
           camera.updateProjectionMatrix();
-          renderer.setSize(newWidth, newHeight);
+          renderer.setSize(newWidth, newHeight, false);
           updateRingScale();
-        }, 100);
+        });
+      };
+
+      if ('ResizeObserver' in window) {
+        const ringResizeObserver = new ResizeObserver(resizeRing);
+        ringResizeObserver.observe(container);
+      } else {
+        window.addEventListener('resize', resizeRing);
+      }
+
+      // Orientation change support
+      window.addEventListener('orientationchange', () => {
+        setTimeout(resizeRing, 100);
       });
     })();
     // ========== END 3D RING ANIMATION ==========
