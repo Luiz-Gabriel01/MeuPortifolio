@@ -97,19 +97,61 @@
     <!-- PROJETOS -->
     <section id="projetos" class="container reveal">
       <h2 class="section-title" id="projectsTitle"><span class="dot"></span> Projetos em destaque</h2>
-      <p class="muted" id="projectsIntro" style="margin-bottom:1rem">Algumas coisas recentes que desenvolvi. Filtre por
-        stack:</p>
+      <p class="muted" id="projectsIntro" style="margin-bottom:1rem">Clique em um projeto para conhecer os detalhes ou
+        filtre por stack:</p>
 
       <div class="row" style="margin-bottom:1rem">
         <button class="btn" id="filterAllBtn" data-filter="all">Todos</button>
         <button class="btn" id="filterReactBtn" data-filter="react">React</button>
         <button class="btn" id="filterPhpBtn" data-filter="php">PHP</button>
         <button class="btn" id="filterNodeBtn" data-filter="node">Node</button>
+        <button class="btn" id="filterMobileBtn" data-filter="mobile">Mobile</button>
+        <button class="btn" id="filterEcommerceBtn" data-filter="ecommerce">E-commerce</button>
       </div>
 
       <div class="grid" id="projectGrid">
         <!-- Card 1 -->
-        <article class="card" data-stack="react node">
+        <article class="card project-card" data-stack="react mobile" data-project="biustock">
+          <img class="thumb mobile-project-thumb" src="projects/biustock/dashboard.webp"
+            alt="Dashboard do aplicativo BiuStock" loading="lazy" />
+          <div class="card-body">
+            <span class="project-freelance-badge" id="projectBiustockFreelance">Projeto freelance</span>
+            <h3>BiuStock</h3>
+            <p class="muted" id="projectBiustockDesc">Aplicativo React Native offline-first para controlar estoque,
+              vendas e reposição. Funciona sem internet e sincroniza os dados ao reconectar.</p>
+            <div class="tags">
+              <span class="tag">React Native</span><span class="tag">Android</span><span class="tag">Offline-first</span>
+            </div>
+            <div class="row">
+              <button class="btn project-details-trigger" type="button" data-project-open="biustock">
+                <i class="fa-solid fa-images"></i><span data-details-text>Detalhes</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card project-card" data-stack="react ecommerce" data-project="oryon">
+          <img class="thumb oryon-project-thumb" src="projects/oryon/home.webp"
+            alt="Página inicial do e-commerce ORYØN" loading="lazy" />
+          <div class="card-body">
+            <span class="project-freelance-badge" id="projectOryonFreelance">Projeto freelance</span>
+            <h3>ORYØN</h3>
+            <p class="muted" id="projectOryonDesc">E-commerce de urban streetwear com catálogo, pedidos, pagamentos
+              pelo Mercado Pago e frete integrado à SuperFrete.</p>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">E-commerce</span>
+            </div>
+            <div class="row">
+              <button class="btn project-details-trigger" type="button" data-project-open="oryon">
+                <i class="fa-solid fa-images"></i><span data-details-text>Detalhes</span>
+              </button>
+              <a class="btn" id="projectOryonBtn" href="https://oryon-d45c2.web.app/" target="_blank"
+                rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card project-card" data-stack="react node" data-project="dashboard">
           <img class="thumb" src="dashBoard.png" alt="Prévia do dashboard de analytics" loading="lazy" />
           <div class="card-body">
             <h3>Dashboard Analytics</h3>
@@ -118,14 +160,17 @@
               <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">JWT</span>
             </div>
             <div class="row">
+              <button class="btn project-details-trigger" type="button" data-project-open="dashboard">
+                <i class="fa-solid fa-images"></i><span data-details-text>Detalhes</span>
+              </button>
               <a class="btn" id="project1Btn" href="https://github.com/Luiz-Gabriel01/DashboardAnalytics#"
-                aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
+                target="_blank" rel="noopener" aria-label="Ver repositório no GitHub"><i class="fa-brands fa-github"></i>
                 Código</a>
             </div>
           </div>
         </article>
-        <!-- Card 2 -->
-        <article class="card" data-stack="php">
+        <!-- Card 4 -->
+        <article class="card project-card" data-stack="php" data-project="bairro-alerta">
           <img class="thumb" src="bairroAlerta.png" alt="Tela de sistema de ocorrências" loading="lazy" />
           <div class="card-body">
             <h3>Bairro Alerta</h3>
@@ -136,16 +181,18 @@
               <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Leaflet</span>
             </div>
             <div class="row">
-              <a class="btn" id="project2Btn" href="https://bairroalerta.infinityfree.me/bairro_alerta/index.html"><i
-                  class="fa-brands fa-github"></i>
+              <button class="btn project-details-trigger" type="button" data-project-open="bairro-alerta">
+                <i class="fa-solid fa-images"></i><span data-details-text>Detalhes</span>
+              </button>
+              <a class="btn" id="project2Btn" href="https://bairroalerta.infinityfree.me/bairro_alerta/index.html"
+                target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>
                 Ver projeto</a>
             </div>
           </div>
         </article>
-        <!-- Card 3 -->
-        <article class="card" data-stack="react">
-          <img class="thumb" src="https://tatsuya-ia.vercel.app/og.png" alt="Prévia da plataforma Tatsuya.IA"
-            loading="lazy" />
+        <!-- Card 5 -->
+        <article class="card project-card" data-stack="react" data-project="tatsuya">
+          <img class="thumb" src="tatsuyaIA.png" alt="Prévia da plataforma Tatsuya.IA" loading="lazy" />
           <div class="card-body">
             <h3 id="project3Title">Tatsuya.IA</h3>
             <p class="muted" id="project3Desc">Plataforma inteligente para conversar, criar, pesquisar e organizar
@@ -154,6 +201,9 @@
               <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">IA</span>
             </div>
             <div class="row">
+              <button class="btn project-details-trigger" type="button" data-project-open="tatsuya">
+                <i class="fa-solid fa-images"></i><span data-details-text>Detalhes</span>
+              </button>
               <a class="btn" id="project3Btn" href="https://tatsuya-ia.vercel.app/" target="_blank"
                 rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver projeto</a>
             </div>
@@ -161,6 +211,57 @@
         </article>
       </div>
     </section>
+
+    <!-- DETALHES DO PROJETO -->
+    <div class="project-modal" id="projectModal" hidden aria-hidden="true">
+      <div class="project-modal-backdrop" data-modal-close></div>
+      <section class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"
+        aria-describedby="projectModalDescription">
+        <button class="project-modal-close" id="projectModalClose" type="button" data-modal-close
+          aria-label="Fechar detalhes do projeto">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="project-modal-layout">
+          <div class="project-modal-gallery" id="projectModalGallery" aria-label="Galeria do projeto">
+            <div class="project-modal-stage">
+              <img id="projectModalImage" src="" alt="" />
+              <span class="project-image-counter" id="projectImageCounter" aria-live="polite"></span>
+              <button class="project-image-navigation-button is-previous" type="button" id="projectImagePrevious"
+                aria-label="Imagem anterior" hidden>
+                <span aria-hidden="true">&larr;</span>
+              </button>
+              <button class="project-image-navigation-button is-next" type="button" id="projectImageNext"
+                aria-label="Próxima imagem" hidden>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+
+            <div class="project-gallery-navigation" id="projectGalleryNavigation" hidden>
+              <div class="project-thumbnails" id="projectThumbnails"></div>
+            </div>
+          </div>
+
+          <div class="project-modal-content">
+            <span class="project-modal-eyebrow" id="projectModalEyebrow"></span>
+            <h2 id="projectModalTitle"></h2>
+            <p class="project-modal-description" id="projectModalDescription"></p>
+
+            <div class="project-modal-section">
+              <h3 id="projectFeaturesTitle">Principais funcionalidades</h3>
+              <ul class="project-feature-list" id="projectFeatureList"></ul>
+            </div>
+
+            <div class="project-modal-section">
+              <h3 id="projectTechnologiesTitle">Tecnologias</h3>
+              <div class="project-modal-tags" id="projectModalTags"></div>
+            </div>
+
+            <div class="project-modal-actions" id="projectModalActions"></div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <!-- HABILIDADES -->
     <section id="habilidades" class="container reveal">
@@ -239,6 +340,16 @@
               <b>2026</b> — Tatsuya.IA, plataforma inteligente para conversar, pesquisar e organizar projetos (React +
               Next.js + IA).
             </div>
+            <div class="t-item" id="timelineOryon">
+              <div class="t-dot"></div>
+              <b>2026</b> — ORYØN, e-commerce freelance de urban streetwear com pagamentos pelo Mercado Pago e frete
+              pela SuperFrete (React + Firebase).
+            </div>
+            <div class="t-item" id="timelineBiustock">
+              <div class="t-dot"></div>
+              <b>2025</b> — BiuStock, projeto freelance mobile offline-first para gestão de estoque e sincronização
+              entre múltiplos usuários (React Native).
+            </div>
             <div class="t-item" id="timeline1">
               <div class="t-dot"></div>
               <b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).
@@ -306,11 +417,19 @@
         heroGithub: 'GitHub',
         heroLinkedin: 'LinkedIn',
         projectsTitle: 'Projetos em destaque',
-        projectsIntro: 'Algumas coisas recentes que desenvolvi. Filtre por stack:',
+        projectsIntro: 'Clique em um projeto para conhecer os detalhes ou filtre por stack:',
+        projectDetails: 'Detalhes',
         filterAll: 'Todos',
         filterReact: 'React',
         filterPhp: 'PHP',
         filterNode: 'Node',
+        filterMobile: 'Mobile',
+        filterEcommerce: 'E-commerce',
+        projectBiustockFreelance: 'Projeto freelance',
+        projectBiustockDesc: 'Aplicativo React Native offline-first para controlar estoque, vendas e reposição. Funciona sem internet e sincroniza os dados ao reconectar.',
+        projectOryonFreelance: 'Projeto freelance',
+        projectOryonDesc: 'E-commerce de urban streetwear com catálogo, pedidos, pagamentos pelo Mercado Pago e frete integrado à SuperFrete.',
+        projectOryonBtn: 'Ver projeto',
         project1Desc: 'SPA em React + API Node.js com autenticação JWT, charts e dark mode.',
         project1Btn: 'Código',
         project2Desc: 'Plataforma de relatos de segurança urbana com login, CRUD e mapa interativo. Somente para desktop',
@@ -325,6 +444,8 @@
         aboutTitle: 'Sobre mim',
         aboutText: 'Sou desenvolvedor web full stack. Gosto de transformar ideias em produtos digitais bonitos e performáticos. No back crio APIs REST seguras; no front foco em UX acessível e microinterações.',
         timeline3: '<b>2026</b> — Tatsuya.IA, plataforma inteligente para conversar, pesquisar e organizar projetos (React + Next.js + IA).',
+        timelineOryon: '<b>2026</b> — ORYØN, e-commerce freelance de urban streetwear com pagamentos pelo Mercado Pago e frete pela SuperFrete (React + Firebase).',
+        timelineBiustock: '<b>2025</b> — BiuStock, projeto freelance mobile offline-first para gestão de estoque e sincronização entre múltiplos usuários (React Native).',
         timeline1: '<b>2025</b> — Plataforma de relatos urbanos (PHP + MySQL + Leaflet).',
         timeline2: '<b>2025</b> — Dashboards React + Node para analytics em tempo real.',
         email: 'E-mail',
@@ -349,11 +470,19 @@
         heroGithub: 'GitHub',
         heroLinkedin: 'LinkedIn',
         projectsTitle: 'Featured projects',
-        projectsIntro: 'Some recent things I have built. Filter by stack:',
+        projectsIntro: 'Select a project to see its details or filter by stack:',
+        projectDetails: 'Details',
         filterAll: 'All',
         filterReact: 'React',
         filterPhp: 'PHP',
         filterNode: 'Node',
+        filterMobile: 'Mobile',
+        filterEcommerce: 'E-commerce',
+        projectBiustockFreelance: 'Freelance project',
+        projectBiustockDesc: 'An offline-first React Native app for inventory, sales and restocking. It works without internet and synchronizes data after reconnecting.',
+        projectOryonFreelance: 'Freelance project',
+        projectOryonDesc: 'An urban streetwear e-commerce platform with catalog, orders, Mercado Pago payments and shipping integrated with SuperFrete.',
+        projectOryonBtn: 'View project',
         project1Desc: 'React SPA + Node.js API with JWT auth, charts and dark mode.',
         project1Btn: 'Code',
         project2Desc: 'Urban safety reporting platform with login, CRUD and interactive map. Desktop only',
@@ -368,6 +497,8 @@
         aboutTitle: 'About me',
         aboutText: 'I am a full stack web developer. I enjoy turning ideas into beautiful and performant digital products. On the back end I build secure REST APIs; on the front end I focus on accessible UX and microinteractions.',
         timeline3: '<b>2026</b> — Tatsuya.IA, an intelligent platform to chat, research and organize projects (React + Next.js + AI).',
+        timelineOryon: '<b>2026</b> — ORYØN, a freelance urban streetwear e-commerce project with Mercado Pago payments and SuperFrete shipping (React + Firebase).',
+        timelineBiustock: '<b>2025</b> — BiuStock, an offline-first mobile freelance project for inventory management and synchronization across multiple users (React Native).',
         timeline1: '<b>2025</b> — Urban reporting platform (PHP + MySQL + Leaflet).',
         timeline2: '<b>2025</b> — React + Node dashboards for real-time analytics.',
         email: 'Email',
@@ -435,6 +566,10 @@
       const projectsIntro = $('#projectsIntro');
       if (projectsIntro) projectsIntro.textContent = copy.projectsIntro;
 
+      $$('[data-details-text]').forEach(label => {
+        label.textContent = copy.projectDetails;
+      });
+
       const filterAllBtn = $('#filterAllBtn');
       if (filterAllBtn) filterAllBtn.textContent = copy.filterAll;
 
@@ -447,6 +582,27 @@
       const filterNodeBtn = $('#filterNodeBtn');
       if (filterNodeBtn) filterNodeBtn.textContent = copy.filterNode;
 
+      const filterMobileBtn = $('#filterMobileBtn');
+      if (filterMobileBtn) filterMobileBtn.textContent = copy.filterMobile;
+
+      const filterEcommerceBtn = $('#filterEcommerceBtn');
+      if (filterEcommerceBtn) filterEcommerceBtn.textContent = copy.filterEcommerce;
+
+      const projectBiustockDesc = $('#projectBiustockDesc');
+      if (projectBiustockDesc) projectBiustockDesc.textContent = copy.projectBiustockDesc;
+
+      const projectBiustockFreelance = $('#projectBiustockFreelance');
+      if (projectBiustockFreelance) projectBiustockFreelance.textContent = copy.projectBiustockFreelance;
+
+      const projectOryonFreelance = $('#projectOryonFreelance');
+      if (projectOryonFreelance) projectOryonFreelance.textContent = copy.projectOryonFreelance;
+
+      const projectOryonDesc = $('#projectOryonDesc');
+      if (projectOryonDesc) projectOryonDesc.textContent = copy.projectOryonDesc;
+
+      const projectOryonBtn = $('#projectOryonBtn');
+      if (projectOryonBtn) projectOryonBtn.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> ${copy.projectOryonBtn}`;
+
       const project1Desc = $('#project1Desc');
       if (project1Desc) project1Desc.textContent = copy.project1Desc;
 
@@ -457,7 +613,7 @@
       if (project2Desc) project2Desc.textContent = copy.project2Desc;
 
       const project2Btn = $('#project2Btn');
-      if (project2Btn) project2Btn.innerHTML = `<i class="fa-brands fa-github"></i> ${copy.project2Btn}`;
+      if (project2Btn) project2Btn.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> ${copy.project2Btn}`;
 
       const project3Title = $('#project3Title');
       if (project3Title) project3Title.textContent = copy.project3Title;
@@ -506,6 +662,12 @@
 
       const timeline3 = $('#timeline3');
       if (timeline3) timeline3.innerHTML = `<div class="t-dot"></div> ${copy.timeline3}`;
+
+      const timelineOryon = $('#timelineOryon');
+      if (timelineOryon) timelineOryon.innerHTML = `<div class="t-dot"></div> ${copy.timelineOryon}`;
+
+      const timelineBiustock = $('#timelineBiustock');
+      if (timelineBiustock) timelineBiustock.innerHTML = `<div class="t-dot"></div> ${copy.timelineBiustock}`;
 
       const timeline1 = $('#timeline1');
       if (timeline1) timeline1.innerHTML = `<div class="t-dot"></div> ${copy.timeline1}`;
@@ -1658,6 +1820,501 @@
     langBtn?.addEventListener('click', () => {
       const nextLanguage = langBtn.dataset.lang === 'en' ? 'pt' : 'en';
       applyLanguage(nextLanguage);
+      if (activeProjectKey) renderProjectModal();
+    });
+
+    // Project showcase modal. Add more image objects to any `images` array
+    // when screenshots from future React Native projects are available.
+    const projectCatalog = {
+      biustock: {
+        layout: 'mobile',
+        images: [
+          {
+            src: 'projects/biustock/dashboard.webp',
+            alt: {
+              pt: 'Dashboard do BiuStock com resumo de produtos, vendas e alertas de estoque',
+              en: 'BiuStock dashboard with products, sales and inventory alert summaries'
+            }
+          },
+          {
+            src: 'projects/biustock/products.webp',
+            alt: {
+              pt: 'Lista de rações do BiuStock com busca e cadastro de produto',
+              en: 'BiuStock pet food list with search and product registration'
+            }
+          },
+          {
+            src: 'projects/biustock/product-details.webp',
+            alt: {
+              pt: 'Detalhes de um produto no BiuStock com estoque, preços e movimentações',
+              en: 'BiuStock product details with inventory, pricing and stock movements'
+            }
+          },
+          {
+            src: 'projects/biustock/product-edit.webp',
+            alt: {
+              pt: 'Formulário de edição de produto no BiuStock',
+              en: 'BiuStock product editing form'
+            }
+          },
+          {
+            src: 'projects/biustock/reports.webp',
+            alt: {
+              pt: 'Relatório de produtos mais vendidos no BiuStock',
+              en: 'BiuStock best-selling products report'
+            }
+          },
+          {
+            src: 'projects/biustock/restock.webp',
+            alt: {
+              pt: 'Lista de reposição de estoque do BiuStock',
+              en: 'BiuStock inventory restocking list'
+            }
+          }
+        ],
+        tags: ['Freelance', 'React Native', 'Android', 'Offline-first', 'Sync', 'Mobile'],
+        pt: {
+          eyebrow: 'Projeto freelance • React Native',
+          title: 'BiuStock',
+          description: 'Projeto freelance desenvolvido sob demanda para ajudar uma loja de rações e produtos relacionados a controlar estoque, vendas e reposição em um único lugar. O sistema continua funcionando sem internet e sincroniza automaticamente as alterações quando a conexão volta, permitindo o uso por várias pessoas.',
+          features: [
+            'Solução baseada nas necessidades reais do cliente.',
+            'Dashboard com visão geral de produtos, vendas e itens com estoque baixo.',
+            'Cadastro, busca, edição e categorização de produtos.',
+            'Registro de vendas, entradas e histórico de movimentações.',
+            'Alertas de estoque baixo e lista inteligente de reposição.',
+            'Relatórios de produtos mais vendidos e histórico de vendas.',
+            'Funcionamento offline-first, mantendo os dados disponíveis mesmo sem internet.',
+            'Sincronização automática das alterações assim que a conexão é restabelecida.',
+            'Uso compartilhado por várias pessoas com os dados sincronizados.'
+          ]
+        },
+        en: {
+          eyebrow: 'Freelance project • React Native',
+          title: 'BiuStock',
+          description: 'A freelance project developed on demand to help a pet food and related products store manage inventory, sales and restocking in one place. The system keeps working without internet and automatically synchronizes changes when the connection returns, allowing multiple people to use it.',
+          features: [
+            'A solution based on the client’s real-world needs.',
+            'Dashboard with an overview of products, sales and low-stock items.',
+            'Product registration, search, editing and categorization.',
+            'Sales, stock entries and movement history records.',
+            'Low-stock alerts and an intelligent restocking list.',
+            'Best-selling product reports and sales history.',
+            'Offline-first operation, keeping data available without internet access.',
+            'Automatic synchronization of changes as soon as the connection is restored.',
+            'Shared use by multiple people with synchronized data.'
+          ]
+        }
+      },
+      oryon: {
+        images: [
+          {
+            src: 'projects/oryon/home.webp',
+            alt: {
+              pt: 'Página inicial do ORYØN com o manifesto Seja Real',
+              en: 'ORYØN homepage featuring the Be Real manifesto'
+            }
+          },
+          {
+            src: 'projects/oryon/store.webp',
+            alt: {
+              pt: 'Loja do ORYØN com catálogo e filtros de produtos',
+              en: 'ORYØN store with product catalog and filters'
+            }
+          },
+          {
+            src: 'projects/oryon/orders.webp',
+            alt: {
+              pt: 'Histórico de pedidos do ORYØN com busca e acompanhamento de status',
+              en: 'ORYØN order history with search and status tracking'
+            }
+          },
+          {
+            src: 'projects/oryon/product.webp',
+            alt: {
+              pt: 'Página de produto do ORYØN com variações, estoque e compra',
+              en: 'ORYØN product page with variants, inventory and purchase options'
+            }
+          }
+        ],
+        tags: ['Freelance', 'React', 'Firebase', 'Firestore', 'Mercado Pago', 'SuperFrete', 'E-commerce'],
+        action: {
+          url: 'https://oryon-d45c2.web.app/',
+          type: 'external'
+        },
+        pt: {
+          eyebrow: 'Projeto freelance • E-commerce',
+          title: 'ORYØN',
+          description: 'E-commerce de urban streetwear desenvolvido como projeto freelance, unindo uma identidade visual marcante a uma jornada completa de compra. A plataforma integra pagamentos pelo Mercado Pago e cálculo de frete pela SuperFrete.',
+          features: [
+            'Experiência visual autoral alinhada à identidade urbana da marca.',
+            'Catálogo com filtros por categoria, preço, tamanho, cor e coleção.',
+            'Página de produto com variações, quantidade, estoque e compra.',
+            'Carrinho e fluxo de checkout integrados ao Mercado Pago.',
+            'Cálculo e opções de frete integrados à SuperFrete.',
+            'Histórico de pedidos com busca, filtros e acompanhamento de status.',
+            'Dados de produtos, clientes e pedidos organizados com Firebase e Firestore.'
+          ],
+          actionLabel: 'Acessar ORYØN'
+        },
+        en: {
+          eyebrow: 'Freelance project • E-commerce',
+          title: 'ORYØN',
+          description: 'An urban streetwear e-commerce platform developed as a freelance project, combining a bold visual identity with a complete shopping journey. The platform integrates Mercado Pago payments and shipping calculations through SuperFrete.',
+          features: [
+            'A distinctive visual experience aligned with the brand’s urban identity.',
+            'Catalog filters for category, price, size, color and collection.',
+            'Product page with variants, quantity, inventory and purchase options.',
+            'Cart and checkout flow integrated with Mercado Pago.',
+            'Shipping calculation and options integrated with SuperFrete.',
+            'Order history with search, filters and status tracking.',
+            'Product, customer and order data organized with Firebase and Firestore.'
+          ],
+          actionLabel: 'Open ORYØN'
+        }
+      },
+      dashboard: {
+        images: [
+          {
+            src: 'dashBoard.png',
+            alt: {
+              pt: 'Dashboard Analytics exibindo gráfico de métricas e resumo de usuários',
+              en: 'Dashboard Analytics showing a metrics chart and user summary'
+            }
+          }
+        ],
+        tags: ['React', 'Node.js', 'JWT', 'Charts', 'Dark mode'],
+        action: {
+          url: 'https://github.com/Luiz-Gabriel01/DashboardAnalytics',
+          type: 'github'
+        },
+        pt: {
+          eyebrow: 'Aplicação Full Stack',
+          title: 'Dashboard Analytics',
+          description: 'Painel de análise criado para reunir métricas em uma interface direta, segura e confortável de usar. O front-end em React consome uma API Node.js e apresenta os dados em gráficos e resumos visuais.',
+          features: [
+            'Autenticação de usuários com JWT.',
+            'Visualização de métricas em gráficos e cartões de resumo.',
+            'Alternância entre temas claro e escuro.',
+            'Integração entre SPA React e API Node.js.'
+          ],
+          actionLabel: 'Ver código no GitHub'
+        },
+        en: {
+          eyebrow: 'Full Stack Application',
+          title: 'Dashboard Analytics',
+          description: 'An analytics dashboard designed to bring metrics together in a direct, secure and comfortable interface. The React front end consumes a Node.js API and presents data through charts and visual summaries.',
+          features: [
+            'JWT-based user authentication.',
+            'Metrics displayed through charts and summary cards.',
+            'Light and dark theme switching.',
+            'Integration between a React SPA and Node.js API.'
+          ],
+          actionLabel: 'View code on GitHub'
+        }
+      },
+      'bairro-alerta': {
+        images: [
+          {
+            src: 'bairroAlerta.png',
+            alt: {
+              pt: 'Página inicial do Bairro Alerta com mapa de segurança urbana',
+              en: 'Bairro Alerta homepage featuring an urban safety map'
+            }
+          }
+        ],
+        tags: ['PHP', 'MySQL', 'Leaflet', 'CRUD', 'APIs'],
+        action: {
+          url: 'https://bairroalerta.infinityfree.me/bairro_alerta/index.html',
+          type: 'external'
+        },
+        pt: {
+          eyebrow: 'Plataforma Web',
+          title: 'Bairro Alerta',
+          description: 'Plataforma colaborativa de segurança urbana que permite registrar ocorrências e visualizar áreas de risco em um mapa interativo. O projeto conecta informações da comunidade a uma experiência visual simples e objetiva.',
+          features: [
+            'Cadastro, autenticação e gerenciamento de usuários.',
+            'Registro, edição e consulta de ocorrências.',
+            'Mapa interativo construído com Leaflet.',
+            'Persistência e organização dos dados com MySQL.'
+          ],
+          actionLabel: 'Acessar projeto'
+        },
+        en: {
+          eyebrow: 'Web Platform',
+          title: 'Bairro Alerta',
+          description: 'A collaborative urban safety platform for reporting incidents and viewing risk areas on an interactive map. The project connects community information to a simple and objective visual experience.',
+          features: [
+            'User registration, authentication and management.',
+            'Incident creation, editing and consultation.',
+            'Interactive map built with Leaflet.',
+            'Data persistence and organization with MySQL.'
+          ],
+          actionLabel: 'Open project'
+        }
+      },
+      tatsuya: {
+        images: [
+          {
+            src: 'tatsuyaIA.png',
+            alt: {
+              pt: 'Workspace principal do Tatsuya.IA com assistente e visão geral',
+              en: 'Tatsuya.IA main workspace with assistant and overview'
+            }
+          }
+        ],
+        tags: ['React', 'Next.js', 'IA', 'Workspace', 'Responsive UI'],
+        action: {
+          url: 'https://tatsuya-ia.vercel.app/',
+          type: 'external'
+        },
+        pt: {
+          eyebrow: 'Produto com Inteligência Artificial',
+          title: 'Tatsuya.IA',
+          description: 'Um centro de comando inteligente para conversar com IA, organizar atividades e acompanhar projetos em um único workspace. A interface combina produtividade, contexto e acesso rápido às principais ferramentas.',
+          features: [
+            'Assistente conversacional integrado ao workspace.',
+            'Organização de tarefas, agenda e projetos.',
+            'Áreas dedicadas para pesquisa, memória e agentes.',
+            'Experiência responsiva para desktop e dispositivos móveis.'
+          ],
+          actionLabel: 'Acessar Tatsuya.IA'
+        },
+        en: {
+          eyebrow: 'Artificial Intelligence Product',
+          title: 'Tatsuya.IA',
+          description: 'An intelligent command center for chatting with AI, organizing activities and tracking projects in a single workspace. The interface combines productivity, context and quick access to key tools.',
+          features: [
+            'Conversational assistant integrated into the workspace.',
+            'Task, calendar and project organization.',
+            'Dedicated areas for research, memory and agents.',
+            'Responsive experience for desktop and mobile devices.'
+          ],
+          actionLabel: 'Open Tatsuya.IA'
+        }
+      }
+    };
+
+    const projectModal = $('#projectModal');
+    const projectModalClose = $('#projectModalClose');
+    const projectModalGallery = $('#projectModalGallery');
+    const projectModalImage = $('#projectModalImage');
+    const projectImageCounter = $('#projectImageCounter');
+    const projectGalleryNavigation = $('#projectGalleryNavigation');
+    const projectThumbnails = $('#projectThumbnails');
+    const projectImagePrevious = $('#projectImagePrevious');
+    const projectImageNext = $('#projectImageNext');
+    const projectModalEyebrow = $('#projectModalEyebrow');
+    const projectModalTitle = $('#projectModalTitle');
+    const projectModalDescription = $('#projectModalDescription');
+    const projectFeaturesTitle = $('#projectFeaturesTitle');
+    const projectTechnologiesTitle = $('#projectTechnologiesTitle');
+    const projectFeatureList = $('#projectFeatureList');
+    const projectModalTags = $('#projectModalTags');
+    const projectModalActions = $('#projectModalActions');
+    const projectModalBackground = [
+      $('header'),
+      $('footer'),
+      ...$$('main > :not(#projectModal)')
+    ].filter(Boolean);
+
+    let activeProjectKey = null;
+    let activeProjectImageIndex = 0;
+    let projectModalLastFocus = null;
+
+    const projectModalLabels = {
+      pt: {
+        features: 'Principais funcionalidades',
+        technologies: 'Tecnologias',
+        gallery: 'Galeria do projeto',
+        close: 'Fechar detalhes do projeto',
+        previous: 'Imagem anterior',
+        next: 'Próxima imagem',
+        image: 'Imagem'
+      },
+      en: {
+        features: 'Key features',
+        technologies: 'Technologies',
+        gallery: 'Project gallery',
+        close: 'Close project details',
+        previous: 'Previous image',
+        next: 'Next image',
+        image: 'Image'
+      }
+    };
+
+    const getProjectLocale = () => document.documentElement.lang === 'en' ? 'en' : 'pt';
+
+    const renderProjectImage = () => {
+      if (!activeProjectKey) return;
+      const locale = getProjectLocale();
+      const project = projectCatalog[activeProjectKey];
+      const image = project.images[activeProjectImageIndex];
+      const labels = projectModalLabels[locale];
+
+      projectModalImage.src = image.src;
+      projectModalImage.alt = image.alt[locale] || image.alt.pt;
+      projectImageCounter.hidden = project.images.length <= 1;
+      projectImageCounter.textContent = `${activeProjectImageIndex + 1} / ${project.images.length}`;
+
+      $$('.project-thumbnail', projectThumbnails).forEach((thumbnail, index) => {
+        thumbnail.setAttribute('aria-current', String(index === activeProjectImageIndex));
+      });
+
+      projectImagePrevious.setAttribute('aria-label', labels.previous);
+      projectImageNext.setAttribute('aria-label', labels.next);
+    };
+
+    const renderProjectModal = () => {
+      if (!activeProjectKey || !projectCatalog[activeProjectKey]) return;
+      const locale = getProjectLocale();
+      const project = projectCatalog[activeProjectKey];
+      const copy = project[locale];
+      const labels = projectModalLabels[locale];
+
+      projectModal.classList.toggle('is-mobile-project', project.layout === 'mobile');
+      projectModalEyebrow.textContent = copy.eyebrow;
+      projectModalTitle.textContent = copy.title;
+      projectModalDescription.textContent = copy.description;
+      projectFeaturesTitle.textContent = labels.features;
+      projectTechnologiesTitle.textContent = labels.technologies;
+      projectModalGallery.setAttribute('aria-label', labels.gallery);
+      projectModalClose.setAttribute('aria-label', labels.close);
+
+      projectFeatureList.replaceChildren(...copy.features.map(feature => {
+        const item = document.createElement('li');
+        item.textContent = feature;
+        return item;
+      }));
+
+      projectModalTags.replaceChildren(...project.tags.map(technology => {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = technology;
+        return tag;
+      }));
+
+      projectModalActions.replaceChildren();
+      projectModalActions.hidden = !project.action;
+      if (project.action) {
+        const action = document.createElement('a');
+        action.className = 'btn primary';
+        action.href = project.action.url;
+        action.target = '_blank';
+        action.rel = 'noopener';
+        action.innerHTML = project.action.type === 'github'
+          ? `<i class="fa-brands fa-github" aria-hidden="true"></i> ${copy.actionLabel}`
+          : `<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> ${copy.actionLabel}`;
+        projectModalActions.appendChild(action);
+      }
+
+      const hasMultipleImages = project.images.length > 1;
+      projectGalleryNavigation.hidden = !hasMultipleImages;
+      projectImagePrevious.hidden = !hasMultipleImages;
+      projectImageNext.hidden = !hasMultipleImages;
+      projectThumbnails.replaceChildren(...project.images.map((image, index) => {
+        const thumbnail = document.createElement('button');
+        thumbnail.type = 'button';
+        thumbnail.className = 'project-thumbnail';
+        thumbnail.dataset.imageIndex = String(index);
+        thumbnail.setAttribute('aria-label', `${labels.image} ${index + 1}`);
+
+        const thumbnailImage = document.createElement('img');
+        thumbnailImage.src = image.src;
+        thumbnailImage.alt = '';
+        thumbnail.appendChild(thumbnailImage);
+        return thumbnail;
+      }));
+
+      renderProjectImage();
+    };
+
+    const showProjectImage = (index) => {
+      if (!activeProjectKey) return;
+      const imageCount = projectCatalog[activeProjectKey].images.length;
+      activeProjectImageIndex = (index + imageCount) % imageCount;
+      renderProjectImage();
+    };
+
+    const openProjectModal = (projectKey) => {
+      if (!projectCatalog[projectKey]) return;
+      projectModalLastFocus = document.activeElement;
+      activeProjectKey = projectKey;
+      activeProjectImageIndex = 0;
+      renderProjectModal();
+
+      projectModal.hidden = false;
+      projectModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('project-modal-open');
+      projectModalBackground.forEach(element => element.setAttribute('inert', ''));
+      requestAnimationFrame(() => projectModalClose.focus());
+    };
+
+    const closeProjectModal = () => {
+      if (projectModal.hidden) return;
+      projectModal.hidden = true;
+      projectModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('project-modal-open');
+      projectModalBackground.forEach(element => element.removeAttribute('inert'));
+      activeProjectKey = null;
+      projectModalLastFocus?.focus();
+    };
+
+    $$('[data-project-open]').forEach(trigger => {
+      trigger.addEventListener('click', event => {
+        event.stopPropagation();
+        openProjectModal(trigger.dataset.projectOpen);
+      });
+    });
+
+    $$('.project-card').forEach(card => {
+      card.addEventListener('click', event => {
+        if (event.target.closest('a, button')) return;
+        openProjectModal(card.dataset.project);
+      });
+    });
+
+    $$('[data-modal-close]', projectModal).forEach(trigger => {
+      trigger.addEventListener('click', closeProjectModal);
+    });
+
+    projectImagePrevious.addEventListener('click', () => showProjectImage(activeProjectImageIndex - 1));
+    projectImageNext.addEventListener('click', () => showProjectImage(activeProjectImageIndex + 1));
+
+    projectThumbnails.addEventListener('click', event => {
+      const thumbnail = event.target.closest('[data-image-index]');
+      if (!thumbnail) return;
+      showProjectImage(Number(thumbnail.dataset.imageIndex));
+    });
+
+    projectModal.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeProjectModal();
+        return;
+      }
+
+      if (event.key === 'ArrowLeft' && projectCatalog[activeProjectKey]?.images.length > 1) {
+        showProjectImage(activeProjectImageIndex - 1);
+      }
+
+      if (event.key === 'ArrowRight' && projectCatalog[activeProjectKey]?.images.length > 1) {
+        showProjectImage(activeProjectImageIndex + 1);
+      }
+
+      if (event.key !== 'Tab') return;
+      const focusable = $$('a[href], button:not([disabled])', projectModal)
+        .filter(element => element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
 
 
