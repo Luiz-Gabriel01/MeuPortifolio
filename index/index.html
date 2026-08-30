@@ -2171,8 +2171,10 @@
       const project = projectCatalog[activeProjectKey];
       const copy = project[locale];
       const labels = projectModalLabels[locale];
+      const hasMultipleImages = project.images.length > 1;
 
       projectModal.classList.toggle('is-mobile-project', project.layout === 'mobile');
+      projectModal.classList.toggle('has-multiple-images', hasMultipleImages);
       projectModalEyebrow.textContent = copy.eyebrow;
       projectModalTitle.textContent = copy.title;
       projectModalDescription.textContent = copy.description;
@@ -2208,7 +2210,6 @@
         projectModalActions.appendChild(action);
       }
 
-      const hasMultipleImages = project.images.length > 1;
       projectGalleryNavigation.hidden = !hasMultipleImages;
       projectImagePrevious.hidden = !hasMultipleImages;
       projectImageNext.hidden = !hasMultipleImages;

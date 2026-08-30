@@ -1398,6 +1398,35 @@
       transform: translateY(-50%) scale(1.06);
     }
 
+    /* Wide screenshots keep their full content visible. Their navigation
+       lives in a dedicated strip below the image instead of covering it. */
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-modal-stage {
+      padding-bottom: 4.65rem;
+    }
+
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-navigation-button {
+      top: auto;
+      bottom: .65rem;
+      transform: none;
+    }
+
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-navigation-button.is-previous {
+      left: calc(50% - 58px);
+    }
+
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-navigation-button.is-next {
+      right: calc(50% - 58px);
+    }
+
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-navigation-button:hover,
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-navigation-button:focus-visible {
+      transform: scale(1.06);
+    }
+
+    .project-modal.has-multiple-images:not(.is-mobile-project) .project-image-counter {
+      bottom: 1.05rem;
+    }
+
     .project-gallery-navigation {
       display: block;
       margin-top: .8rem;
